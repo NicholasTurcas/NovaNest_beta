@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NovaNest</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asap+Sharp:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="nav-brand">
+            NovaNest
+        </div>
+
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Settings</a>
+            <a href="#">About</a>
+        </div>
+
+    </nav>
+
+
+    <main class="container">
+
+        <header class="page-header">
+            <h1>Welcome to NovaNest</h1>
+            <p>Your house, your comfort.</p>
+        </header>
+
+
+        <section class="system-section">
+
+            <h2>System Data</h2>
+
+            <div id="dataContainer">
+
+                <div class="data-card">
+                    <h3>Temperature</h3>
+                    <p>
+                        <span id="temperature" class="sensor-value">24.6 °C</span>
+                        <span class="timestamp">10:42</span>
+                    </p>
+                </div>
+
+                <div class="data-card">
+                    <h3>Humidity</h3>
+                    <p>
+                        <span id="humidity">Loading...</span>
+                    </p>
+                </div>
+
+                <div class="data-card">
+                    <h3>Power Consumption</h3>
+                    <p>
+                        <span id="powerConsumption">Loading...</span>
+                    </p>
+                </div>
+
+                <div class="data-card">
+                    <h3>Solar Production</h3>
+                    <p>
+                        <span id="solarProduction">Loading...</span>
+                    </p>
+                </div>
+
+                <div class="data-card">
+                    <h3>Battery</h3>
+                    <p>
+                        <span id="batteryLevel">Loading...</span>
+                    </p>
+                </div>
+
+                <div class="data-card">
+                    <h3>System Status</h3>
+                    <p>
+                        <span id="systemOnline">Loading...</span>
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
