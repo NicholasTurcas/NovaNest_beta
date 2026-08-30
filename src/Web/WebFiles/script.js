@@ -28,3 +28,18 @@ batteryElement.textContent = battery + " %";
 const systemElement = document.getElementById("systemOnline");
 const systemOnline = true;
 systemElement.textContent = systemOnline ? "Online" : "Offline";    
+
+const timestampElements = document.querySelectorAll(".timestamp");
+console.log(timestampElements);
+
+const now = new Date();
+
+const hours = now.getHours();
+const minutes = now.getMinutes();
+
+const minutesFormatted = minutes.toString().padStart(2, "0");
+const hoursFormatted = hours.toString().padStart(2, "0");
+
+timestampElements.forEach(element => {
+    element.textContent = hoursFormatted + ":" + minutesFormatted;
+});
