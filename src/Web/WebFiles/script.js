@@ -1,45 +1,53 @@
-console.log("NovaNest JavaScript pornit!");
+
+const sensorData = {
+    temperature: 28.5,
+    humidity: 60,
+    power: 125,
+    solar: 85,
+    battery: 78,
+    systemOnline: true
+};
+
+function getCurrentTime() {
+    const now = new Date();
+
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const minutesFormatted = minutes.toString().padStart(2, "0");
+    const hoursFormatted = hours.toString().padStart(2, "0");
+
+    return { hoursFormatted, minutesFormatted };
+}
 
 const temperatureElement = document.getElementById("temperature");
-console.log(temperatureElement);
-const temperature = 27.5; 
-temperatureElement.textContent = temperature + " °C";
-
 const humidityElement = document.getElementById("humidity");
-const humidity = 60;
-
-humidityElement.textContent = humidity + " %";
-
 const powerElement = document.getElementById("powerConsumption");
-const power = 125;
-
-powerElement.textContent = power + " W";
-
 const solarElement = document.getElementById("solarProduction");
-const solar = 85;
-
-solarElement.textContent = solar + " W";
-
 const batteryElement = document.getElementById("batteryLevel");
-const battery = 78; 
-
-batteryElement.textContent = battery + " %";
-
 const systemElement = document.getElementById("systemOnline");
-const systemOnline = true;
-systemElement.textContent = systemOnline ? "Online" : "Offline";    
-
 const timestampElements = document.querySelectorAll(".timestamp");
-console.log(timestampElements);
 
-const now = new Date();
+const temperatureCard = document.querySelector(".data-card");
 
-const hours = now.getHours();
-const minutes = now.getMinutes();
-
-const minutesFormatted = minutes.toString().padStart(2, "0");
-const hoursFormatted = hours.toString().padStart(2, "0");
-
-timestampElements.forEach(element => {
-    element.textContent = hoursFormatted + ":" + minutesFormatted;
+temperatureCard.addEventListener("click", () => {
+    window.location.href = "temperature.html";
 });
+
+function updateDashboard() {
+    temperatureElement.textContent = sensorData.temperature.toFixed(1) + " °C";
+    humidityElement.textContent = sensorData.humidity + " %";
+    powerElement.textContent = sensorData.power + " W";
+    solarElement.textContent = sensorData.solar + " W";
+    batteryElement.textContent = sensorData.battery + " %";
+    systemElement.textContent = sensorData.systemOnline ? "Online" : "Offline";
+    
+    const currentTime = getCurrentTime();
+
+    timestampElements.forEach(element => {
+    element.textContent = currentTime.hoursFormatted + ":" + currentTime.minutesFormatted;
+    });
+}
+
+updateDashboard();  
+
+setInterval(updateDashboard, 10000);
