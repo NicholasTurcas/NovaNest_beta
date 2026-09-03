@@ -76,19 +76,19 @@ function updateDashboard() {
 
 
     humidityElement.textContent =
-        sensorData.humidity + " %";
+        sensorData.humidity;
 
 
     powerElement.textContent =
-        sensorData.power + " W";
+        sensorData.power;
 
 
     solarElement.textContent =
-        sensorData.solar + " W";
+        sensorData.solar;
 
 
     batteryElement.textContent =
-        sensorData.battery + " %";
+        sensorData.battery;
 
 
     headerSystemStatusElement.textContent =

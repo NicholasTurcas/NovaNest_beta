@@ -10,7 +10,8 @@ body {
 
 /* =========================
    BOTTOM NAVIGATION
-   ========================= */
+   ========================= 
+*/
 
 .bottom-navbar {
     position: fixed;
@@ -59,7 +60,8 @@ body {
 
 /* =========================
    MAIN CONTAINER
-   ========================= */
+   ========================= 
+*/
 
 .container {
     width: 100%;
@@ -70,7 +72,8 @@ body {
 
 /* =========================
    HEADER
-   ========================= */
+   =========================
+*/
 
 .page-header {
     display: flex;
@@ -118,7 +121,8 @@ h1 {
 
 /* =========================
    OVERVIEW
-   ========================= */
+   ========================= 
+*/
 
 .system-section {
     margin-top: 10px;
@@ -132,7 +136,8 @@ h1 {
 
 /* =========================
    CARDS GRID
-   ========================= */
+   ========================= 
+*/
 
 #dataContainer {
     display: grid;
@@ -147,9 +152,12 @@ h1 {
 
 /* =========================
    GENERAL CARD
-   ========================= */
+   ========================= 
+*/
 
 .data-card {
+    height: 120px;
+
     background-color: white;
 
     padding: 12px 10px;
@@ -172,6 +180,13 @@ h1 {
     align-items: center;
 }
 
+.card-icon {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
 .sensor-value {
     font-size: 20px;
     color: #000;
@@ -189,9 +204,14 @@ h1 {
     color: #8DBCC7;
 }
 
+h3{
+    margin-bottom: 10px;
+}
+
 /* =========================
    TEMPERATURE CARD
-   ========================= */
+   ========================= 
+*/
 
 .temperature-layout {
     display: grid;
@@ -243,9 +263,174 @@ h1 {
     color: #000;
 }
 
+
+/* =========================
+   HUMIDITY CARD
+   ========================= 
+*/
+
+.humidity-layout {
+    display: grid;
+
+    grid-template-columns: 41px 1fr;
+
+    align-items: start;
+}
+
+
+.humidity-card {
+    padding-left: 10px;
+}
+
+.humidity-card .card-icon {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+    margin-top: 10px;
+}
+
+.humidity-content {
+    min-width: 0;
+}
+
+.humidity-value {
+    display: flex;
+
+    align-items: baseline;
+    justify-content: flex-start;
+
+    gap: 4px;
+
+    margin: 0;
+}
+
+.humidity-value .sensor-value {
+    font-size: 28px;
+
+    color: #000;
+    font-style: normal;
+
+    margin: 0;
+}
+
+.humidity-unit {
+    font-size: 17px;
+    color: #000;
+}
+
+
+/* =========================
+   POWER CONSUMPTION CARD
+   ========================= 
+*/
+.power-layout {
+    display: grid;
+
+    grid-template-columns: 36px 1fr;
+
+    align-items: start;
+}
+
+
+.power-card {
+    padding-left: 10px;
+}
+
+.power-card .card-icon {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+    margin-top: 10px;
+}
+
+.power-content {
+    min-width: 0;
+}
+
+.power-value {
+    display: flex;
+
+    align-items: baseline;
+    justify-content: flex-start;
+
+    gap: 4px;
+
+    margin: 0;
+}
+
+.power-value .sensor-value {
+    font-size: 28px;
+
+    color: #000;
+    font-style: normal;
+
+    margin: 0;
+}
+
+.power-unit {
+    font-size: 17px;
+    color: #000;
+}
+
+
+/* =========================
+    SOLAR CARD
+   ========================= 
+*/
+
+.solar-layout {
+    display: grid;
+
+    grid-template-columns: 43px 1fr;
+
+    align-items: start;
+}
+
+
+.solar-card {
+    padding-left: 10px;
+}
+
+.solar-card .card-icon {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+    margin-top: 10px;
+}
+
+.solar-content {
+    min-width: 0;
+}
+
+.solar-value {
+    display: flex;
+
+    align-items: baseline;
+    justify-content: flex-start;
+
+    gap: 4px;
+
+    margin: 0;
+}
+
+.solar-value .sensor-value {
+    font-size: 28px;
+
+    color: #000;
+    font-style: normal;
+
+    margin: 0;
+}
+
+.solar-unit {
+    font-size: 17px;
+    color: #000;
+}
+
 /* =========================
    DARK MODE
-   ========================= */
+   ========================= 
+*/
 
 body.dark-mode {
     background-color: #010811;
@@ -284,7 +469,8 @@ body.dark-mode .nav-links a {
 
 /* =========================
    RESPONSIVE
-   ========================= */
+   ========================= 
+*/
 
 @media (max-width: 700px) {
     #dataContainer {
