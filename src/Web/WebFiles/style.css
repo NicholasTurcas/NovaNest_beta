@@ -67,7 +67,7 @@ body {
     width: 100%;
     max-width: none;
     margin: 0 auto;
-    padding: 30px 20px;
+    padding: 20px;
 }
 
 /* =========================
@@ -124,13 +124,13 @@ h1 {
    ========================= 
 */
 
-.system-section {
-    margin-top: 10px;
+#overview {
+    padding: 20px;
 }
 
 .system-section h2 {
     font-size: clamp(20px, 3vw, 30px);
-    margin-top: 10px;
+    margin-top: 5px;
     margin-bottom: 30px;
 }
 
@@ -147,7 +147,7 @@ h1 {
 
     gap: 30px;
 
-    margin: 20px auto 0;
+    margin: 90px auto 0;
 }
 
 /* =========================
@@ -428,6 +428,263 @@ h3{
 }
 
 /* =========================
+   BATTERY CARD
+   ========================= */
+
+.battery-layout {
+    display: grid;
+
+    grid-template-columns: 39px 1fr;
+
+    align-items: start;
+}
+
+.battery-card {
+    padding-left: 10px;
+}
+
+.battery-card .card-icon {
+    width: 34px;
+    height: 34px;
+
+    object-fit: contain;
+
+    margin-top: 10px;
+}
+
+.battery-content {
+    min-width: 0;
+}
+
+.battery-value {
+    display: flex;
+
+    align-items: baseline;
+    justify-content: flex-start;
+
+    gap: 4px;
+
+    margin: 0;
+}
+
+.battery-value .sensor-value {
+    font-size: 28px;
+
+    color: #000;
+    font-style: normal;
+
+    margin: 0;
+}
+
+.battery-unit {
+    font-size: 17px;
+    color: #000;
+}
+
+
+/* =========================
+    WATER CARD
+   ========================= 
+*/
+
+.water-layout {
+    display: grid;
+    grid-template-columns: 39px 1fr;
+    align-items: start;
+}
+
+.water-card {
+    padding-left: 10px;
+}
+
+.water-card .card-icon {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+    margin-top: 10px;
+}
+
+.water-content {
+    min-width: 0;
+}
+
+.water-value {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    gap: 4px;
+    margin: 0;
+}
+
+.water-value .sensor-value {
+    font-size: 28px;
+
+    color: #000;
+    font-style: normal;
+
+    margin: 0;
+}
+
+.water-unit {
+    font-size: 17px;
+    color: #000;
+}
+
+
+/* =========================
+   LIGHTS CARD
+   =========================
+*/
+
+.lights-layout {
+    display: grid;
+
+    grid-template-columns: 41px 1fr;
+
+    align-items: start;
+}
+
+.lights-card {
+    padding-left: 10px;
+}
+
+.lights-card .card-icon {
+    width: 34px;
+    height: 34px;
+
+    object-fit: contain;
+
+    margin-top: 10px;
+}
+
+.lights-content {
+    min-width: 0;
+}
+
+.lights-value {
+    display: flex;
+
+    align-items: baseline;
+    justify-content: flex-start;
+
+    gap: 4px;
+
+    margin: 0;
+}
+
+.lights-value .sensor-value {
+    font-size: 28px;
+
+    color: #000;
+    font-style: normal;
+
+    margin: 0;
+}
+
+
+/* =========================
+   IRRIGATION CARD
+   =========================
+*/
+
+.irrigation-layout {
+    display: grid;
+
+    grid-template-columns: 43px 1fr;
+
+    align-items: start;
+}
+
+.irrigation-card {
+    padding-left: 10px;
+}
+
+.irrigation-card .card-icon {
+    width: 29px;
+    height: 29px;
+
+    object-fit: contain;
+
+    margin: 12px 0px 0px 5px;
+}
+
+.irrigation-content {
+    min-width: 0;
+}
+
+.irrigation-value {
+    display: flex;
+
+    align-items: baseline;
+    justify-content: flex-start;
+
+    gap: 4px;
+
+    margin: 8px 0 0 0;
+}
+
+.irrigation-value .sensor-value {
+    font-size: 28px;
+
+    color: #000;
+    font-style: normal;
+
+    margin: 0;
+}
+
+
+/* =========================
+   SECURITY CARD
+   =========================
+*/
+
+.security-layout {
+    display: grid;
+
+    grid-template-columns: 40px 1fr;
+
+    align-items: start;
+}
+
+.security-card {
+    padding-left: 10px;
+}
+
+.security-card .card-icon {
+    width: 34px;
+    height: 34px;
+
+    object-fit: contain;
+
+    margin-top: 10px;
+}
+
+.security-content {
+    min-width: 0;
+}
+
+.security-value {
+    display: flex;
+
+    align-items: baseline;
+    justify-content: flex-start;
+
+    gap: 4px;
+
+    margin: 8px 0 0 0;
+}
+
+.security-value .sensor-value {
+    font-size: 28px;
+
+    color: #000;
+    font-style: normal;
+
+    margin: 0;
+}
+
+
+/* =========================
    DARK MODE
    ========================= 
 */
@@ -471,6 +728,14 @@ body.dark-mode .nav-links a {
    RESPONSIVE
    ========================= 
 */
+
+@media (max-width: 1330px) {
+    #dataContainer {
+        width: 80%;
+        grid-template-columns: repeat(2, 1/2fr);
+        gap: 20px;
+    }
+}
 
 @media (max-width: 700px) {
     #dataContainer {

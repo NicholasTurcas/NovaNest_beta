@@ -265,7 +265,7 @@
 
         <section class="system-section">
 
-            <h2>Overview</h2>
+            <h2 id="overview">Overview</h2>
 
 
             <div id="dataContainer">
@@ -296,10 +296,6 @@
                                     class="sensor-value"
                                 >
                                     Loading...
-                                </span>
-
-                                <span class="temperature-unit">
-                                    °C
                                 </span>
 
                             </p>
@@ -338,10 +334,6 @@
                                     Loading...
                                 </span>
 
-                                <span class="humidity-unit">
-                                    %
-                                </span>
-
                             </p>
 
                         </div>
@@ -376,10 +368,6 @@
                                     class="sensor-value"
                                 >
                                     Loading...
-                                </span>
-
-                                <span class="power-unit">
-                                    W
                                 </span>
 
                             </p>
@@ -417,10 +405,6 @@
                                     Loading...
                                 </span>
 
-                                <span class="solar-unit">
-                                    W
-                                </span>
-
                             </p>
 
                         </div>
@@ -430,115 +414,184 @@
                 </div>
                 <!-- BATTERY -->
 
-                <div class="data-card">
+                <!-- BATTERY -->
 
-                    <h3>
-                        Battery
-                    </h3>
+                <div class="data-card battery-card">
 
-                    <p>
+                    <div class="battery-layout">
 
-                        <span
-                            id="batteryLevel"
-                            class="sensor-value"
+                        <img
+                            src="./Images/battery.svg"
+                            class="card-icon"
+                            alt="Battery"
                         >
-                            Loading...
-                        </span>
 
-                    </p>
+                        <div class="battery-content">
+
+                            <h3>
+                                Battery
+                            </h3>
+
+                            <p class="battery-value">
+
+                                <span
+                                    id="batteryLevel"
+                                    class="sensor-value"
+                                >
+                                    Loading...
+                                </span>
+
+                            </p>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
 
                 <!-- WATER LEVEL -->
 
-                <div class="data-card">
+                <div class="data-card water-card">
 
-                    <h3>
-                        Water Level
-                    </h3>
+                    <div class="water-layout">
 
-                    <p>
-
-                        <span
-                            id="waterLevel"
-                            class="sensor-value"
+                        <img
+                            src="./Images/water.svg"
+                            class="card-icon"
+                            alt="Water Level"
                         >
-                            Loading...
-                        </span>
 
-                    </p>
+                        <div class="water-content">
+
+                            <h3>
+                                Water Level
+                            </h3>
+
+                            <p class="water-value">
+
+                                <span
+                                    id="waterLevel"
+                                    class="sensor-value"
+                                >
+                                    Loading...
+                                </span>
+                                
+                            </p>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
 
                 <!-- LIGHTS -->
 
-                <div class="data-card">
+                <div class="data-card lights-card">
 
-                    <h3>
-                        Lights
-                    </h3>
+                    <div class="lights-layout">
 
-                    <p>
-
-                        <span
-                            id="lightsStatus"
-                            class="sensor-value"
+                        <img
+                            src="./Images/light-bulb.svg"
+                            class="card-icon"
+                            alt="Lights"
                         >
-                            Loading...
-                        </span>
 
-                    </p>
+                        <div class="lights-content">
+
+                            <h3>
+                                Lights
+                            </h3>
+
+                            <p class="lights-value">
+
+                                <span
+                                    id="lightsStatus"
+                                    class="sensor-value"
+                                >
+                                    Loading...
+                                </span>
+
+                            </p>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
 
                 <!-- IRRIGATION -->
 
-                <div class="data-card">
+                <div class="data-card irrigation-card">
 
-                    <h3>
-                        Irrigation
-                    </h3>
+                    <div class="irrigation-layout">
 
-                    <p>
-
-                        <span
-                            id="irrigationStatus"
-                            class="sensor-value"
+                        <img
+                            src="./Images/leaf.svg"
+                            class="card-icon"
+                            alt="Irrigation"
                         >
-                            Loading...
-                        </span>
 
-                    </p>
+                        <div class="irrigation-content">
+
+                            <h3>
+                                Irrigation
+                            </h3>
+
+                            <p class="irrigation-value">
+
+                                <span
+                                    id="irrigationStatus"
+                                    class="sensor-value"
+                                >
+                                    Loading...
+                                </span>
+
+                            </p>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
 
                 <!-- SECURITY -->
 
-                <div class="data-card">
+                <div class="data-card security-card">
 
-                    <h3>
-                        Security
-                    </h3>
+                    <div class="security-layout">
 
-                    <p>
-
-                        <span
-                            id="securityStatus"
-                            class="sensor-value"
+                        <img
+                            src="./Images/shield.svg"
+                            class="card-icon"
+                            alt="Security"
                         >
-                            Loading...
-                        </span>
 
-                    </p>
+                        <div class="security-content">
+
+                            <h3>
+                                Security
+                            </h3>
+
+                            <p class="security-value">
+
+                                <span
+                                    id="securityStatus"
+                                    class="sensor-value"
+                                >
+                                    Loading...
+                                </span>
+
+                            </p>
+
+                        </div>
+
+                    </div>
 
                 </div>
-
-
-            </div>
 
         </section>
 
