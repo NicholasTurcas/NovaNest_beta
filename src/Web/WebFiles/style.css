@@ -4,7 +4,7 @@
 
 body {
     margin: 0;
-    background-color: #C4E1E6;
+    background-color: #C4E1Ef;
     font-family: Arial, sans-serif;
 }
 
@@ -125,7 +125,8 @@ h1 {
 */
 
 #overview {
-    padding: 20px;
+    padding: 10px;
+    margin: 0;
 }
 
 .system-section h2 {
@@ -147,7 +148,7 @@ h1 {
 
     gap: 30px;
 
-    margin: 90px auto 0;
+    margin: 1em auto;
 }
 
 /* =========================
@@ -729,12 +730,34 @@ body.dark-mode .nav-links a {
    ========================= 
 */
 
-@media (max-width: 1330px) {
+@media (min-width: 1200px) {
     #dataContainer {
-        width: 80%;
-        grid-template-columns: repeat(2, 1/2fr);
-        gap: 20px;
+        display: grid;
+        width: 70%;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        margin: 1em auto;
     }
+
+}
+
+@media (max-width: 1200px) {
+    #dataContainer {
+        width: 90%;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        margin: 2em auto;
+    }
+
+}
+
+@media (max-width: 900px) {
+    #dataContainer {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
 }
 
 @media (max-width: 700px) {
@@ -743,6 +766,14 @@ body.dark-mode .nav-links a {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
+
+    .power-title {
+        margin-top: 10px;
+    }
+
+    .solar-title {
+        margin-top: 12px;
+    }
 }
 
 @media (max-width: 450px) {
@@ -750,5 +781,13 @@ body.dark-mode .nav-links a {
         width: 100%;
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
+    }
+
+    .power-title {
+        margin-top: 3px;
+    }
+
+    .solar-title {
+        margin-top: 3px;
     }
 }

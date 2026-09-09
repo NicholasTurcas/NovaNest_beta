@@ -4,6 +4,10 @@ const sensorData = {
     power: 125,
     solar: 85,
     battery: 78,
+    waterLevel: 65,
+    lightsStatus: "Off",
+    irrigationStatus: "Off",
+    securityStatus: "Armed",
     systemOnline: true
 };
 
@@ -26,6 +30,18 @@ const solarElement =
 
 const batteryElement =
     document.getElementById("batteryLevel");
+
+const waterLevelElement =
+    document.getElementById("waterLevel");
+
+const lightsStatusElement =
+    document.getElementById("lightsStatus");
+
+const irrigationStatusElement =
+    document.getElementById("irrigationStatus");
+
+const securityStatusElement =
+    document.getElementById("securityStatus");
 
 const currentDateElement =
     document.getElementById("currentDate");
@@ -89,6 +105,18 @@ function updateDashboard() {
 
     batteryElement.textContent =
         sensorData.battery;
+    
+    waterLevelElement.textContent =
+    sensorData.waterLevel;
+
+    lightsStatusElement.textContent =
+        sensorData.lightsStatus;
+
+    irrigationStatusElement.textContent =
+        sensorData.irrigationStatus;
+
+    securityStatusElement.textContent =
+        sensorData.securityStatus;
 
 
     headerSystemStatusElement.textContent =
