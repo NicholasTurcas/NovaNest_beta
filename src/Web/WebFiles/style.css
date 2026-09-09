@@ -765,6 +765,7 @@ body.dark-mode .nav-links a {
         width: 100%;
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
+        margin: 0;
     }
 
     .power-title {
@@ -776,7 +777,7 @@ body.dark-mode .nav-links a {
     }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
     #dataContainer {
         width: 100%;
         grid-template-columns: repeat(2, 1fr);
