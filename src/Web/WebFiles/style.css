@@ -67,7 +67,7 @@ body {
     width: 100%;
     max-width: none;
     margin: 0 auto;
-    padding: 20px;
+    padding: 20px 20px 140px 20px;
 }
 
 /* =========================
@@ -782,8 +782,7 @@ body.dark-mode .nav-links a {
         width: 100%;
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
-        margin-top: 0;
-        margin-bottom: 50px;
+
     }
 
     .power-title {
