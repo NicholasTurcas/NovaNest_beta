@@ -1,5 +1,5 @@
 const sensorData = {
-    temperature: 28.5,
+    temperature: null,
     humidity: 60,
     power: 125,
     solar: 85,
@@ -80,6 +80,17 @@ function updateDateTime() {
     currentTimeElement.textContent = time;
 }
 
+function updateTemperature() {
+
+    if (sensorData.temperature === null) {
+        temperatureElement.textContent = "No data";
+        return;
+    }
+
+    temperatureElement.textContent =
+        sensorData.temperature.toFixed(1);
+}
+
 
 /* =========================
    DASHBOARD
@@ -87,8 +98,7 @@ function updateDateTime() {
 
 function updateDashboard() {
 
-    temperatureElement.textContent =
-        sensorData.temperature.toFixed(1);
+    updateTemperature();
 
 
     humidityElement.textContent =
