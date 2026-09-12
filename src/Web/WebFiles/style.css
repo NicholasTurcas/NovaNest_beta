@@ -726,6 +726,26 @@ body.dark-mode .nav-links a {
 }
 
 /* =========================
+   OFFLINE AND ERROR STATES
+   ========================= 
+*/
+
+.data-card.offline {
+    opacity: 0.7;
+}
+
+.data-card.error {
+    box-shadow:
+        0 0 0 2px #F5535B,
+        3px 2px 0.7em rgb(18,125,144),
+        -3px -2px 0.5em rgb(70,70,70);
+}
+
+.data-card.error .sensor-value {
+    color: #F5535B;
+}
+
+/* =========================
    RESPONSIVE
    ========================= 
 */
