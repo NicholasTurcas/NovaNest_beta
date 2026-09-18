@@ -12,7 +12,7 @@ const sensorData = {
     solarError: false,
 
     battery: 90,
-    batteryError: true,
+    batteryError: false,
 
     waterLevel: 75,
     waterLevelError: false,
@@ -523,11 +523,38 @@ function updateSecurity() {
 }
 
 /* =========================
+   TEMPERTURE SIMULATION
+   ========================= 
+*/
+
+function simulateTemperature() {
+
+    if (!sensorData.systemOnline) {
+        return;
+    }
+
+    if (sensorData.temperatureError) {
+        return;
+    }
+
+    if (sensorData.temperature === null) {
+        return;
+    }
+
+    const change = (Math.random() - 0.5) * 0.4;
+
+    sensorData.temperature += change;
+}
+
+
+/* =========================
    DASHBOARD
    ========================= 
 */
 
 function updateDashboard() {
+
+    simulateTemperature();
 
     updateTemperature();
 

@@ -2,12 +2,13 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>NovaNest</title>
+    <title>NovaNest - Analytics</title>
 
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./analytics.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +17,9 @@
         href="https://fonts.googleapis.com/css2?family=Asap+Sharp:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet"
     >
+
 </head>
+
 
 <body>
 
@@ -28,7 +31,7 @@
 
         <!-- HOME -->
 
-        <a href="#" class="nav-item active">
+        <a href="../index.html" class="nav-item">
 
             <svg
                 class="nav-icon"
@@ -67,7 +70,7 @@
 
         <!-- ANALYTICS -->
 
-        <a href="./Analytics/analytics.html" class="nav-item">
+        <a href="#" class="nav-item active">
 
             <svg
                 class="nav-icon"
@@ -210,6 +213,7 @@
 
     <main class="container">
 
+
         <!-- HEADER -->
 
         <header class="page-header">
@@ -223,8 +227,6 @@
                 <div class="header-title">
 
                     <h1>NovaNest</h1>
-
-                    <p>Smart Home Dashboard</p>
 
                 </div>
 
@@ -258,347 +260,78 @@
 
         </header>
 
+        <div class="analytics-separator">
+            
+            <h2>Analytics</h2>
+        
+        </div>
+
 
         <!-- =========================
-             OVERVIEW
+             ANALYTICS
              ========================= -->
 
-        <section class="system-section">
+       <section class="analytics-section">
+            
+            <div id="analyticsContainer">
 
-            <h2 id="overview">Overview</h2>
+                <!-- =========================
+                    ANALYTICS SIDEBAR
+                    ========================= -->
+
+                <aside class="analytics-sidebar">
+
+                    <button class="analytics-module active" data-module="temperature">
+                        Temperature
+                    </button>
+
+                    <button class="analytics-module" data-module="humidity">
+                        Humidity
+                    </button>
+
+                    <button class="analytics-module" data-module="power">
+                        Power Consumption
+                    </button>
+
+                    <button class="analytics-module" data-module="solar">
+                        Solar Production
+                    </button>
+
+                    <button class="analytics-module" data-module="battery">
+                        Battery
+                    </button>
+
+                    <button class="analytics-module" data-module="water">
+                        Water Level
+                    </button>
+
+                </aside>
 
 
-            <div id="dataContainer">
+                <!-- =========================
+                    ANALYTICS CONTENT
+                    ========================= -->
 
+                <div class="analytics-chart">
+                    
+                    <h3>Temperature</h3>
 
-                <!-- TEMPERATURE -->
-
-                <div class="data-card temperature-card"  id="temperatureCard">
-
-                    <div class="temperature-layout">
-
-                        <img
-                            src="./Images/temperature.svg"
-                            class="card-icon"
-                            alt="Temperature"
-                        >
-
-                        <div class="temperature-content">
-
-                            <h3>
-                                Temperature
-                            </h3>
-
-                            <p class="temperature-value">
-
-                                <span
-                                    id="temperature"
-                                    class="sensor-value"
-                                >
-                                    Loading...
-                                </span>
-
-                            </p>
-
-                        </div>
-
+                    <div class="chart-container">
+                        <canvas id="temperatureChart"></canvas>
                     </div>
 
                 </div>
 
-
-               <!-- HUMIDITY -->
-
-                <div class="data-card humidity-card" id="humidityCard">
-
-                    <div class="humidity-layout">
-
-                        <img
-                            src="./Images/humidity.svg"
-                            class="card-icon"
-                            alt="Humidity"
-                        >
-
-                        <div class="humidity-content">
-
-                            <h3>
-                                Humidity
-                            </h3>
-
-                            <p class="humidity-value">
-
-                                <span
-                                    id="humidity"
-                                    class="sensor-value"
-                                >
-                                    Loading...
-                                </span>
-
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- POWER CONSUMPTION -->
-
-                <div class="data-card power-card" id="powerCard">
-
-                    <div class="power-layout">
-
-                        <img 
-                            src="./Images/lightning-bolt.svg" 
-                            class="card-icon" 
-                            alt="Power Consumption"
-                        >
-
-                        <div class="power-content">
-
-                            <h3 class="power-title">
-                                Power Consumption
-                            </h3>
-
-                            <p class="power-value">
-
-                                <span 
-                                    id="powerConsumption" 
-                                    class="sensor-value"
-                                >
-                                    Loading...
-                                </span>
-
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- SOLAR PRODUCTION -->
-                 
-                <div class="data-card solar-card" id="solarCard">
-
-                    <div class="solar-layout">
-
-                        <img 
-                            src="./Images/sun.svg" 
-                            class="card-icon" 
-                            alt="Solar Production"
-                        >
-
-                        <div class="solar-content">
-
-                            <h3 class="solar-title">
-                                Solar Production
-                            </h3>
-
-                            <p class="solar-value">
-
-                                <span 
-                                    id="solarProduction" 
-                                    class="sensor-value"
-                                >
-                                    Loading...
-                                </span>
-
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-                <!-- BATTERY -->
-
-                <!-- BATTERY -->
-
-                <div class="data-card battery-card" id="batteryCard">
-
-                    <div class="battery-layout">
-
-                        <img
-                            src="./Images/battery.svg"
-                            class="card-icon"
-                            alt="Battery"
-                        >
-
-                        <div class="battery-content">
-
-                            <h3>
-                                Battery
-                            </h3>
-
-                            <p class="battery-value">
-
-                                <span
-                                    id="batteryLevel"
-                                    class="sensor-value"
-                                >
-                                    Loading...
-                                </span>
-
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- WATER LEVEL -->
-
-                <div class="data-card water-card" id="waterCard">
-
-                    <div class="water-layout">
-
-                        <img
-                            src="./Images/water.svg"
-                            class="card-icon"
-                            alt="Water Level"
-                        >
-
-                        <div class="water-content">
-
-                            <h3>
-                                Water Level
-                            </h3>
-
-                            <p class="water-value">
-
-                                <span
-                                    id="waterLevel"
-                                    class="sensor-value"
-                                >
-                                    Loading...
-                                </span>
-                                
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- LIGHTS -->
-
-                <div class="data-card lights-card" id="lightsCard">
-
-                    <div class="lights-layout">
-
-                        <img
-                            src="./Images/light-bulb.svg"
-                            class="card-icon"
-                            alt="Lights"
-                        >
-
-                        <div class="lights-content">
-
-                            <h3>
-                                Lights
-                            </h3>
-
-                            <p class="lights-value">
-
-                                <span
-                                    id="lightsStatus"
-                                    class="sensor-value"
-                                >
-                                    Loading...
-                                </span>
-
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- IRRIGATION -->
-
-                <div class="data-card irrigation-card" id="irrigationCard">
-
-                    <div class="irrigation-layout">
-
-                        <img
-                            src="./Images/leaf.svg"
-                            class="card-icon"
-                            alt="Irrigation"
-                        >
-
-                        <div class="irrigation-content">
-
-                            <h3>
-                                Irrigation
-                            </h3>
-
-                            <p class="irrigation-value">
-
-                                <span
-                                    id="irrigationStatus"
-                                    class="sensor-value"
-                                >
-                                    Loading...
-                                </span>
-
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- SECURITY -->
-
-                <div class="data-card security-card" id="securityCard">
-
-                    <div class="security-layout">
-
-                        <img
-                            src="./Images/shield.svg"
-                            class="card-icon"
-                            alt="Security"
-                        >
-
-                        <div class="security-content">
-
-                            <h3>
-                                Security
-                            </h3>
-
-                            <p class="security-value">
-
-                                <span
-                                    id="securityStatus"
-                                    class="sensor-value"
-                                >
-                                    Loading...
-                                </span>
-
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
+            </div>
 
         </section>
 
+
     </main>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <script src="script.js"></script>
+<script src="./analytics.js"></script>
 
 </body>
 

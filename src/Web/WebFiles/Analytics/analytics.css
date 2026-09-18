@@ -1,0 +1,248 @@
+/* =========================
+   BODY
+   ========================= 
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #C4E1Ef;
+    font-family: Arial, sans-serif;
+}
+
+/* =========================
+   BOTTOM NAVIGATION
+   ========================= 
+*/
+
+.bottom-navbar {
+    position: fixed;
+    bottom: calc(20px + env(safe-area-inset-bottom));
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 10px;
+
+    padding: 8px;
+
+    background-color: #F9FAFB;
+    border: 1px solid #DCEAF0;
+    border-radius: 12px;
+
+    z-index: 1000;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #53636D;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 7px 16px;
+    border-radius: 8px;
+}
+
+.nav-item.active {
+    color: #8DBCC7;
+}
+
+.nav-icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+    object-fit: contain;
+}
+
+.nav-label {
+    font-size: 13px;
+}
+
+/* =========================
+    PAGE HEADER
+   ========================= 
+*/
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.header-left {
+    display: flex;
+    align-items: flex-start;
+}
+
+.header-title h1 {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.header-right {
+    text-align: right;
+    margin-top: 10px;
+    margin-right: 12px;
+}
+
+.header-date-time {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.header-status {
+    margin-top: 4px;
+}
+
+.status-dot {
+    color: #8DBCC7;
+}
+
+h1 {
+    font-size: clamp(24px, 4vw, 36px);
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+/* =========================
+   ANALYTICS PAGE
+   ========================= 
+*/
+
+.analytics-separator{
+    width: 12%;
+    margin: 5px 10px 10px 20px;
+}
+
+.analytics-separator h2{
+    margin: 0;
+}
+
+.analytics-section {
+    width: 100%;
+}
+
+
+/* =========================
+   ANALYTICS CONTAINER
+   ========================= 
+*/
+
+#analyticsContainer {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 90px;
+    width: 95%;
+    margin: 30px auto;
+}
+
+
+/* =========================
+   SIDEBAR
+   ========================= */
+
+.analytics-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+
+/* =========================
+   MODULE CARDS
+   ========================= */
+
+.analytics-module {
+    width: 100%;
+    min-height: 48px;
+
+    padding: 10px 14px;
+
+    background-color: #F9FAFB;
+
+    border: 1px solid #DCEAF0;
+    border-radius: 12px;
+
+    font-family: "Asap Sharp", sans-serif;
+    font-size: 15px;
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* =========================
+   ACTIVE MODULE
+   ========================= */
+
+.analytics-module.active {
+    color: #8DBCC7;
+    border-color: #8DBCC7;
+}
+
+
+/* =========================
+   HOVER
+   ========================= */
+
+.analytics-module:hover {
+    transform: translateX(3px);
+}
+
+
+/* =========================
+   CONTENT
+   ========================= */
+
+#analyticsContent {
+    min-height: 400px;
+
+    padding: 25px;
+
+    background-color: #F9FAFB;
+
+    border: 1px solid #DCEAF0;
+    border-radius: 15px;
+
+    box-shadow:
+        3px 2px 0.7em rgb(18,125,144),
+        -3px -2px 0.5em rgb(70,70,70);
+}
+
+#analyticsContent h3 {
+    margin-top: 0;
+}
+
+/* =========================
+   ANALYTICS CHART
+========================= */
+
+.analytics-chart {
+    width: 100%;
+}
+
+.analytics-chart h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 320px;
+}
