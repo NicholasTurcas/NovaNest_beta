@@ -262,6 +262,7 @@ h1 {
         flex-direction: column;
         gap: 20px;
         width: 90%;
+        margin-top: 5px;
     }
 
     .analytics-sidebar {
@@ -274,5 +275,7 @@ h1 {
     .analytics-module {
         flex: 1 1 calc(50% - 6px);
     }
+
+
 
 }
