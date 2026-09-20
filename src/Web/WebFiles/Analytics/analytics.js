@@ -176,6 +176,17 @@ analyticsModules.forEach(function(module) {
         // Schimbă unitatea axei Y
         analyticsChart.options.scales.y.title.text = selectedData.unit;
 
+        // Valoarea max pentru unitile masurate in % este de 100%
+        if (selectedData.unit === "%") {
+        analyticsChart.options.scales.y.min = 0;
+        analyticsChart.options.scales.y.max = 100;
+        } 
+        
+        else {
+            delete analyticsChart.options.scales.y.min;
+            delete analyticsChart.options.scales.y.max;
+        }
+
         // Reafișează graficul
         analyticsChart.update();
     });
