@@ -124,6 +124,7 @@ h1 {
 
 .analytics-separator h2{
     margin: 0;
+    width: 100%;
 }
 
 .analytics-section {
@@ -261,8 +262,13 @@ h1 {
         display: flex;
         flex-direction: column;
         gap: 20px;
-        width: 100%;
+        width: 90%;
         margin-top: 5px;
+    }
+
+    .analytics-separator h2{
+        margin: 0;
+        width: 100%;
     }
 
     .analytics-sidebar {
