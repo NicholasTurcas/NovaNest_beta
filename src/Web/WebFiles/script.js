@@ -178,47 +178,6 @@ securityCard.addEventListener("click", function() {
 
 
 /* =========================
-   CURRENT DATE & TIME
-   ========================= 
-*/
-
-const currentDateElement =
-    document.getElementById("currentDate");
-
-const currentTimeElement =
-    document.getElementById("currentTime");
-
-const headerSystemStatusElement =
-    document.getElementById("headerSystemStatus");
-
-
-/* =========================
-   DATE & TIME
-   ========================= 
-*/
-
-function updateDateTime() {
-
-    const now = new Date();
-
-    const date = now.toLocaleDateString("en-GB", {
-        day: "2-digit",
-        month: "short",
-        year: "numeric"
-    });
-
-    const time = now.toLocaleTimeString("en-GB", {
-        hour: "2-digit",
-        minute: "2-digit"
-    });
-
-    currentDateElement.textContent = date;
-
-    currentTimeElement.textContent = time;
-}
-
-
-/* =========================
    TEMPERATURE
    ========================= 
 */
@@ -574,14 +533,6 @@ function updateDashboard() {
 
     updateSecurity();
 
-
-    headerSystemStatusElement.textContent =
-        sensorData.systemOnline
-            ? "Online"
-            : "Offline";
-
-
-    updateDateTime();
 }
 
 
