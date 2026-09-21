@@ -1,7 +1,6 @@
 /* =========================
    BODY
-   ========================= 
-*/
+========================= */
 
 * {
     box-sizing: border-box;
@@ -13,10 +12,10 @@ body {
     font-family: Arial, sans-serif;
 }
 
+
 /* =========================
    BOTTOM NAVIGATION
-   ========================= 
-*/
+========================= */
 
 .bottom-navbar {
     position: fixed;
@@ -55,6 +54,7 @@ body {
 .nav-icon {
     width: 24px;
     height: 24px;
+
     display: block;
     object-fit: contain;
 }
@@ -63,15 +63,16 @@ body {
     font-size: 13px;
 }
 
+
 /* =========================
-    PAGE HEADER
-   ========================= 
-*/
+   PAGE HEADER
+========================= */
 
 .page-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+
     text-align: left;
 }
 
@@ -87,6 +88,7 @@ body {
 
 .header-right {
     text-align: right;
+
     margin-top: 10px;
     margin-right: 12px;
 }
@@ -95,6 +97,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+
     gap: 8px;
 }
 
@@ -109,20 +112,22 @@ body {
 h1 {
     font-size: clamp(24px, 4vw, 36px);
     text-align: left;
+
     margin-bottom: 5px;
 }
 
+
 /* =========================
    ANALYTICS PAGE
-   ========================= 
-*/
+========================= */
 
-.analytics-separator{
+.analytics-separator {
     width: 12%;
+
     margin: 5px 10px 10px 20px;
 }
 
-.analytics-separator h2{
+.analytics-separator h2 {
     margin: 0;
 }
 
@@ -133,13 +138,14 @@ h1 {
 
 /* =========================
    ANALYTICS CONTAINER
-   ========================= 
-*/
+========================= */
 
 #analyticsContainer {
     display: grid;
+
     grid-template-columns: 220px 1fr;
     gap: 90px;
+
     width: 95%;
     margin: 30px auto;
 }
@@ -147,23 +153,21 @@ h1 {
 
 /* =========================
    SIDEBAR
-   ========================= */
+========================= */
 
 .analytics-sidebar {
     display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 20px;
-}
+    flex-direction: column;
 
-.analytics-module {
-    flex: 1 1 200px;
+    gap: 12px;
+
+    margin-top: 20px;
 }
 
 
 /* =========================
    MODULE CARDS
-   ========================= */
+========================= */
 
 .analytics-module {
     width: 100%;
@@ -178,6 +182,7 @@ h1 {
 
     font-family: "Asap Sharp", sans-serif;
     font-size: 15px;
+
     text-align: left;
 
     cursor: pointer;
@@ -192,7 +197,7 @@ h1 {
 
 /* =========================
    ACTIVE MODULE
-   ========================= */
+========================= */
 
 .analytics-module.active {
     color: #8DBCC7;
@@ -201,8 +206,8 @@ h1 {
 
 
 /* =========================
-   HOVER
-   ========================= */
+   MODULE HOVER
+========================= */
 
 .analytics-module:hover {
     transform: translateX(3px);
@@ -210,27 +215,80 @@ h1 {
 
 
 /* =========================
-   CONTENT
-   ========================= */
+   ANALYTICS MAIN
+========================= */
 
-#analyticsContent {
-    min-height: 400px;
+.analytics-main {
+    grid-column: 2;
 
-    padding: 25px;
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    width: 100%;
+}
+
+
+/* =========================
+   ANALYTICS PERIODS
+========================= */
+
+.analytics-periods {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    width: fit-content;
+}
+
+
+/* =========================
+   PERIOD BUTTONS
+========================= */
+
+.analytics-period {
+    padding: 8px 16px;
 
     background-color: #F9FAFB;
 
     border: 1px solid #DCEAF0;
-    border-radius: 15px;
+    border-radius: 10px;
 
-    box-shadow:
-        3px 2px 0.7em rgb(18,125,144),
-        -3px -2px 0.5em rgb(70,70,70);
+    font-family: "Asap Sharp", sans-serif;
+    font-size: 14px;
+
+    color: #53636D;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
 }
 
-#analyticsContent h3 {
-    margin-top: 0;
+
+/* =========================
+   ACTIVE PERIOD
+========================= */
+
+.analytics-period.active {
+    color: #8DBCC7;
+    border-color: #8DBCC7;
 }
+
+
+/* =========================
+   PERIOD HOVER
+========================= */
+
+.analytics-period:hover {
+    transform: translateY(-2px);
+}
+
 
 /* =========================
    ANALYTICS CHART
@@ -245,35 +303,89 @@ h1 {
     margin-bottom: 20px;
 }
 
+
+/* =========================
+   CHART CONTAINER
+========================= */
+
 .chart-container {
     position: relative;
+
     width: 100%;
     height: 320px;
+
+    border-radius: 12px;
+
+    padding: 15px;
 }
+
 
 /* =========================
    RESPONSIVE
-   ========================= */
+========================= */
 
 @media (max-width: 700px) {
 
     #analyticsContainer {
         display: flex;
         flex-direction: column;
+
         gap: 20px;
+
         width: 90%;
-        margin: 0px auto;
+        margin: 0 auto;
     }
+
+
+    /* MODULE SELECTOR */
 
     .analytics-sidebar {
         display: flex;
+        flex-direction: row;
         flex-wrap: wrap;
+
         gap: 12px;
+
         margin-top: 0;
     }
 
     .analytics-module {
         flex: 1 1 calc(50% - 6px);
+
+        min-width: 0;
     }
 
+
+    /* MAIN CONTENT */
+
+    .analytics-main {
+        display: flex;
+        flex-direction: column;
+
+        gap: 20px;
+
+        width: 100%;
+    }
+
+
+    /* PERIOD BUTTONS */
+
+    .analytics-periods {
+        width: 100%;
+
+        justify-content: flex-start;
+
+        flex-wrap: wrap;
+    }
+
+
+    /* CHART */
+
+    .analytics-chart {
+        width: 100%;
+    }
+
+    .chart-container {
+        height: 320px;
+    }
 }

@@ -312,17 +312,33 @@
                         ANALYTICS CONTENT
                         ========================= -->
 
-                    <div class="analytics-chart">
-                        
-                        <h3>Temperature</h3>
+                    <div class="analytics-main">
 
-                        <div class="chart-container">
-                            <canvas id="temperatureChart"></canvas>
+                        <div class="analytics-periods">
+
+                            <button class="analytics-period active" data-period="24h">
+                                24h
+                            </button>
+
+                            <button class="analytics-period" data-period="7d">
+                                7 zile
+                            </button>
+
+                            <button class="analytics-period" data-period="30d">
+                                30 zile
+                            </button>
+
+                        </div>
+
+                        <div class="analytics-chart">
+                            <h3>Temperature</h3>
+
+                            <div class="chart-container">
+                                <canvas id="temperatureChart"></canvas>
+                            </div>
                         </div>
 
                     </div>
-
-                </div>
 
             </section>
 

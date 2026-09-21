@@ -1,4 +1,101 @@
 // =========================
+// LABELS TIME SPAN
+// =========================
+
+// 24h labels
+function get24HourLabels() {
+
+    const labels = [];
+    const now = new Date();
+
+    labels.push("00:00");
+
+    for (let hour = 2; hour <= now.getHours(); hour += 2) {
+        labels.push(
+            String(hour).padStart(2, "0") + ":00"
+        );
+    }
+
+    // Adaugă ora actuală dacă nu este deja prezentă
+    const currentTime =
+        String(now.getHours()).padStart(2, "0") +
+        ":" +
+        String(now.getMinutes()).padStart(2, "0");
+
+    if (!labels.includes(currentTime)) {
+        labels.push(currentTime);
+    }
+
+    return labels;
+}
+
+// 7 days labels
+function get7DayLabels() {
+
+    const labels = [];
+    const now = new Date();
+
+    const dayNames = [
+        "Sun", "Mon", "Tue", "Wed",
+        "Thu", "Fri", "Sat"
+    ];
+
+    for (let i = 6; i >= 0; i--) {
+
+        const date = new Date(now);
+
+        date.setDate(now.getDate() - i);
+
+        labels.push(
+            dayNames[date.getDay()]
+        );
+    }
+
+    return labels;
+}
+
+// 30 days labels
+function get30DayLabels() {
+
+    const labels = [];
+    const now = new Date();
+
+    for (let i = 29; i >= 0; i--) {
+
+        const date = new Date(now);
+
+        date.setDate(now.getDate() - i);
+
+        labels.push(
+            String(date.getDate()).padStart(2, "0") +
+            "/" +
+            String(date.getMonth() + 1).padStart(2, "0")
+        );
+    }
+
+    return labels;
+}
+
+// Function to get labels
+function getLabels(period) {
+
+    if (period === "24h") {
+        return get24HourLabels();
+    }
+
+    if (period === "7d") {
+        return get7DayLabels();
+    }
+
+    if (period === "30d") {
+        return get30DayLabels();
+    }
+
+    return [];
+}
+
+
+// =========================
 // ANALYTICS DATA
 // =========================
 
@@ -103,6 +200,8 @@ const analyticsData = {
 const chartCanvas = document.getElementById("temperatureChart");
 const chartTitle = document.querySelector(".analytics-chart h3");
 const analyticsModules = document.querySelectorAll(".analytics-module");
+const analyticsPeriods =
+    document.querySelectorAll(".analytics-period");
 
 let analyticsChart = new Chart(chartCanvas, {
     type: "line",
@@ -186,6 +285,37 @@ analyticsModules.forEach(function(module) {
             delete analyticsChart.options.scales.y.min;
             delete analyticsChart.options.scales.y.max;
         }
+
+        // Reafișează graficul
+        analyticsChart.update();
+    });
+
+});
+
+// =========================
+// PERIOD SWITCHING
+// =========================
+
+analyticsPeriods.forEach(function(period) {
+
+    period.addEventListener("click", function() {
+
+        const selectedPeriod =
+            period.dataset.period;
+
+        const selectedLabels =
+            getLabels(selectedPeriod);
+
+        // Schimbă perioada activă
+        analyticsPeriods.forEach(function(item) {
+            item.classList.remove("active");
+        });
+
+        period.classList.add("active");
+
+        // Schimbă labels
+        analyticsChart.data.labels =
+            selectedLabels;
 
         // Reafișează graficul
         analyticsChart.update();
