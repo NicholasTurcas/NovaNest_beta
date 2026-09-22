@@ -1,5 +1,7 @@
 #include "WebServer.h"
 
+#include "../Communication/API.h"
+
 void WebServer::begin() {
     server.on("/", [this]() {
         handleRoot();
@@ -9,6 +11,10 @@ void WebServer::begin() {
         handleStatus();
     });
 
+    if (historyManager != nullptr) {
+        setupAPI(server, *historyManager);
+    }
+
     server.onNotFound([this]() {
         handleNotFound();
     });
@@ -17,6 +23,7 @@ void WebServer::begin() {
 
     Serial.println("[Web] Server pornit.");
     Serial.println("[Web] API: /api/status");
+    Serial.println("[Web] API: /api/analytics");
 }
 
 void WebServer::update() {
@@ -104,6 +111,10 @@ void WebServer::handleStatus() {
 
 void WebServer::setData(const NovaNestData& newData) {
     data = newData;
+}
+
+void WebServer::setHistoryManager(HistoryManager& manager) {
+    historyManager = &manager;
 }
 
 void WebServer::handleNotFound() {

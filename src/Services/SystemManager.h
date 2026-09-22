@@ -2,6 +2,7 @@
 
 #include "../Communication/WiFiManager.h"
 #include "../Web/WebServer.h"
+#include "../Services/HistoryManager.h"
 
 class SystemManager {
 public:
@@ -11,4 +12,5 @@ public:
 private:
     WiFiManager wifiManager;
     WebServer webServer;
+    HistoryManager historyManager;
 };

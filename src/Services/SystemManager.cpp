@@ -14,7 +14,12 @@ void SystemManager::begin() {
 
     Serial.println("System initializat.");
 
+    historyManager.begin();
+
+    webServer.setHistoryManager(historyManager);
+
     wifiManager.begin();
+
     NovaNestData testData;
 
     testData.temperature = 23.5;
@@ -25,6 +30,18 @@ void SystemManager::begin() {
     testData.systemOnline = true;
 
     webServer.setData(testData);
+
+    HistoryData historyData;
+
+    historyData.timestamp = millis();
+    historyData.temperature = testData.temperature;
+    historyData.humidity = testData.humidity;
+    historyData.power = testData.powerConsumption;
+    historyData.solar = testData.solarProduction;
+    historyData.battery = testData.batteryLevel;
+    historyData.waterLevel = 75.0;
+
+    historyManager.save(historyData);
 
     if (wifiManager.isConnected()) {
         webServer.begin();

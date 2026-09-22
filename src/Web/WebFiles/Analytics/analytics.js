@@ -95,6 +95,19 @@ function getLabels(period) {
 }
 
 
+// GET DATA FROM API
+async function getAnalyticsData(module, period) {
+    const response = await fetch(
+        `/api/analytics?module=${module}&period=${period}`
+    );
+
+    if (!response.ok) {
+        throw new Error("Failed to fetch analytics data");
+    }
+
+    return await response.json();
+}
+
 // =========================
 // ANALYTICS DATA
 // =========================
@@ -252,10 +265,17 @@ let analyticsChart = new Chart(chartCanvas, {
 
 analyticsModules.forEach(function(module) {
 
-    module.addEventListener("click", function() {
+    module.addEventListener("click", async function() {
 
-        const selectedModule = module.dataset.module;
-        const selectedData = analyticsData[selectedModule];
+        const selectedModule =
+            module.dataset.module;
+
+        // Perioada selectată momentan
+        const activePeriod =
+            document.querySelector(".analytics-period.active");
+
+        const selectedPeriod =
+            activePeriod.dataset.period;
 
         // Schimbă modulul activ
         analyticsModules.forEach(function(item) {
@@ -264,30 +284,46 @@ analyticsModules.forEach(function(module) {
 
         module.classList.add("active");
 
+        // Ia datele din API
+        const data =
+            await getAnalyticsData(
+                selectedModule,
+                selectedPeriod
+            );
+
         // Schimbă titlul
-        chartTitle.textContent = selectedData.title;
+        chartTitle.textContent =
+            data.title;
 
         // Schimbă datele graficului
-        analyticsChart.data.labels = selectedData.labels;
-        analyticsChart.data.datasets[0].label = selectedData.title;
-        analyticsChart.data.datasets[0].data = selectedData.values;
+        analyticsChart.data.labels =
+            data.labels;
+
+        analyticsChart.data.datasets[0].label =
+            data.title;
+
+        analyticsChart.data.datasets[0].data =
+            data.values;
 
         // Schimbă unitatea axei Y
-        analyticsChart.options.scales.y.title.text = selectedData.unit;
+        analyticsChart.options.scales.y.title.text =
+            data.unit;
 
-        // Valoarea max pentru unitile masurate in % este de 100%
-        if (selectedData.unit === "%") {
-        analyticsChart.options.scales.y.min = 0;
-        analyticsChart.options.scales.y.max = 100;
-        } 
-        
-        else {
+        // Procentele au axa 0-100
+        if (data.unit === "%") {
+
+            analyticsChart.options.scales.y.min = 0;
+            analyticsChart.options.scales.y.max = 100;
+
+        } else {
+
             delete analyticsChart.options.scales.y.min;
             delete analyticsChart.options.scales.y.max;
         }
 
         // Reafișează graficul
         analyticsChart.update();
+
     });
 
 });
@@ -298,13 +334,10 @@ analyticsModules.forEach(function(module) {
 
 analyticsPeriods.forEach(function(period) {
 
-    period.addEventListener("click", function() {
+    period.addEventListener("click", async function() {
 
         const selectedPeriod =
             period.dataset.period;
-
-        const selectedLabels =
-            getLabels(selectedPeriod);
 
         // Schimbă perioada activă
         analyticsPeriods.forEach(function(item) {
@@ -313,12 +346,30 @@ analyticsPeriods.forEach(function(period) {
 
         period.classList.add("active");
 
-        // Schimbă labels
+        // Modul selectat momentan
+        const activeModule =
+            document.querySelector(".analytics-module.active");
+
+        const selectedModule =
+            activeModule.dataset.module;
+
+        // Ia datele din API
+        const data =
+            await getAnalyticsData(
+                selectedModule,
+                selectedPeriod
+            );
+
+        // Pune datele în grafic
         analyticsChart.data.labels =
-            selectedLabels;
+            data.labels;
+
+        analyticsChart.data.datasets[0].data =
+            data.values;
 
         // Reafișează graficul
         analyticsChart.update();
+
     });
 
 });
