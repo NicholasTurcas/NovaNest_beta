@@ -787,6 +787,10 @@ body.dark-mode .nav-links a {
         margin: 0;
     }
 
+    #overview {
+        margin-bottom: 5px;
+    }
+
     .power-title {
         margin-top: 10px;
     }
@@ -802,6 +806,10 @@ body.dark-mode .nav-links a {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
 
+    }
+
+    #overview {
+        margin-bottom: 5px;
     }
 
     .power-title {
