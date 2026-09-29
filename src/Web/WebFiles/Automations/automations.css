@@ -454,3 +454,29 @@ h1 {
 .automation-switch input:checked + .automation-slider::before {
     transform: translateX(22px);
 }
+
+/* =========================
+   RESPONSIVE - AUTOMATIONS
+   ========================= */
+
+@media (max-width: 600px) {
+    #automationsContainer {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+
+        width: 100%;
+        margin: 0;
+        columns: unset;
+        column-count: initial;
+    }
+
+    .automation-card {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        height: auto;
+        margin: 0;
+        box-sizing: border-box;
+    }
+}
