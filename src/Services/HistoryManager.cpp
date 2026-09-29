@@ -2,7 +2,6 @@
 #include <LittleFS.h>
 
 bool HistoryManager::begin() {
-
     if (!LittleFS.begin()) {
         Serial.println("[History] LittleFS failed.");
         return false;
@@ -14,7 +13,6 @@ bool HistoryManager::begin() {
 }
 
 bool HistoryManager::save(const HistoryData& data) {
-
     File file = LittleFS.open("/history.json", "a");
 
     if (!file) {
@@ -58,7 +56,6 @@ bool HistoryManager::save(const HistoryData& data) {
 }
 
 bool HistoryManager::read(String& history) {
-
     File file = LittleFS.open("/history.json", "r");
 
     if (!file) {
@@ -69,6 +66,19 @@ bool HistoryManager::read(String& history) {
     history = file.readString();
 
     file.close();
+
+    return true;
+}
+
+bool HistoryManager::clear() {
+    if (LittleFS.exists("/history.json")) {
+        if (!LittleFS.remove("/history.json")) {
+            Serial.println("[History] Failed to clear history.");
+            return false;
+        }
+    }
+
+    Serial.println("[History] History cleared.");
 
     return true;
 }

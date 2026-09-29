@@ -13,4 +13,12 @@ private:
     WiFiManager wifiManager;
     WebServer webServer;
     HistoryManager historyManager;
+
+    NovaNestData currentData;
+
+    unsigned long lastHistorySave = 0;
+
+    static const unsigned long HISTORY_INTERVAL = 300000;
+
+    void saveHistory();
 };

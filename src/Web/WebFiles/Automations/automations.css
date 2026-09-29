@@ -1,0 +1,456 @@
+/* =========================
+   GENERAL
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family: "Asap Sharp", sans-serif;
+
+    background: #C4E1EF;
+    color: #111827;
+
+    min-height: 100vh;
+
+    padding-bottom: 100px;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+   ========================= */
+
+.container {
+    width: 98%;
+    max-width: 1600px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    text-align: left;
+}
+
+.header-left {
+    display: flex;
+    align-items: flex-start;
+}
+
+.header-title h1 {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.header-right {
+    text-align: right;
+
+    margin-top: 10px;
+    margin-right: 12px;
+}
+
+.header-date-time {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 8px;
+}
+
+.header-status {
+    margin-top: 4px;
+}
+
+.status-dot {
+    color: #8DBCC7;
+}
+
+h1 {
+    font-size: clamp(24px, 4vw, 36px);
+    text-align: left;
+
+    margin-bottom: 5px;
+}
+
+.header-title p {
+    margin: 0 0 0;
+    margin-left: 10px;
+    font-size: 15px;
+    opacity: 0.7;
+}
+
+
+/* =========================
+   AUTOMATIONS
+   ========================= */
+
+.automations-section {
+    margin-top: 10px;
+}
+
+.automations-section h2 {
+    margin: 0 0 15px;
+
+    font-size: 26px;
+    font-weight: 700;
+}
+
+#automationsContainer {
+    width: 100%;
+}
+
+.automation-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.automation-card:hover {
+    transform: translateY(-2px) scale(1.005);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================
+   BOTTOM NAVIGATION
+========================= */
+
+.bottom-navbar {
+    position: fixed;
+    bottom: calc(20px + env(safe-area-inset-bottom));
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 10px;
+
+    padding: 8px;
+
+    background-color: #F9FAFB;
+    border: 1px solid #DCEAF0;
+    border-radius: 12px;
+
+    z-index: 1000;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #53636D;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 7px 16px;
+    border-radius: 8px;
+}
+
+.nav-item.active {
+    color: #8DBCC7;
+}
+
+.nav-icon {
+    width: 24px;
+    height: 24px;
+
+    display: block;
+    object-fit: contain;
+}
+
+.nav-label {
+    font-size: 13px;
+}
+
+/* =========================
+   AUTOMATION CARD
+   ========================= */
+
+#automationsContainer {
+    columns: 3;
+    column-gap: 20px;
+}   
+
+.automation-card {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    height: fit-content;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+    break-inside: avoid;
+}
+
+
+.automation-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.automation-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.automation-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 46px;
+    height: 46px;
+
+    border-radius: 14px;
+
+    background: #E2F0F7;
+
+    font-size: 22px;
+}
+
+
+.automation-title h3 {
+    margin: 0;
+
+    font-size: 19px;
+}
+
+
+.automation-title p {
+    margin: 4px 0 0;
+
+    font-size: 13px;
+
+    opacity: 0.6;
+}
+
+
+.automation-content {
+    margin-top: 18px;
+}
+
+
+.automation-description {
+    margin: 0 0 16px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    opacity: 0.75;
+}
+
+
+.automation-condition {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 11px 14px;
+
+    margin-bottom: 8px;
+
+    background: rgba(196, 225, 239, 0.45);
+
+    border-radius: 12px;
+}
+
+
+.automation-condition:last-of-type {
+    margin-bottom: 0;
+}
+
+
+.condition-value {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+}
+
+
+.condition-value input {
+    width: 65px;
+
+    padding: 7px 8px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: white;
+
+    font-family: inherit;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+
+.automation-status {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 14px;
+
+    font-size: 13px;
+}
+
+
+.automation-status strong {
+    font-weight: 600;
+}
+
+
+/* =========================
+   SWITCH
+   ========================= */
+
+.automation-switch {
+    position: relative;
+
+    width: 48px;
+    height: 26px;
+
+    display: inline-block;
+}
+
+
+.automation-switch input {
+    opacity: 0;
+
+    width: 0;
+    height: 0;
+}
+
+
+.automation-slider {
+    position: absolute;
+
+    inset: 0;
+
+    cursor: pointer;
+
+    background: #CBD5E1;
+
+    border-radius: 30px;
+
+    transition: 0.2s;
+}
+
+
+.automation-slider::before {
+    content: "";
+
+    position: absolute;
+
+    width: 20px;
+    height: 20px;
+
+    left: 3px;
+    top: 3px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    transition: 0.2s;
+}
+
+
+.automation-switch input:checked + .automation-slider {
+    background: #6B9FB8;
+}
+
+
+.automation-switch input:checked + .automation-slider::before {
+    transform: translateX(22px);
+}
+
+/* =========================
+   SWITCH
+   ========================= */
+
+.automation-switch {
+    position: relative;
+
+    width: 48px;
+    height: 26px;
+
+    display: inline-block;
+}
+
+
+.automation-switch input {
+    opacity: 0;
+
+    width: 0;
+    height: 0;
+}
+
+
+.automation-slider {
+    position: absolute;
+
+    inset: 0;
+
+    cursor: pointer;
+
+    background: #CBD5E1;
+
+    border-radius: 30px;
+
+    transition: 0.2s;
+}
+
+
+.automation-slider::before {
+    content: "";
+
+    position: absolute;
+
+    width: 20px;
+    height: 20px;
+
+    left: 3px;
+    top: 3px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    transition: 0.2s;
+}
+
+
+.automation-switch input:checked + .automation-slider {
+    background: #6B9FB8;
+}
+
+
+.automation-switch input:checked + .automation-slider::before {
+    transform: translateX(22px);
+}
