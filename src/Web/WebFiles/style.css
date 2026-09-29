@@ -749,74 +749,92 @@ body.dark-mode .nav-links a {
    ========================= 
 */
 
-@media (min-width: 1200px) {
-    #dataContainer {
-        display: grid;
-        width: 70%;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 40px;
-        margin: 1em auto 0px;
-    }
+/* =========================
+   RESPONSIVE - TABLET
+   ========================= */
 
-}
-
-@media (max-width: 1200px) {
-    #dataContainer {
-        width: 90%;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
-        margin: 2em auto;
-    }
-
-}
-
-@media (max-width: 900px) {
+@media (min-width: 601px) and (max-width: 900px) {
     #dataContainer {
         width: 100%;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
     }
 
+    #overview {
+        margin-left: 0;
+    }
 }
 
-@media (max-width: 700px) {
+
+/* =========================
+   RESPONSIVE - MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 10px 12px 130px;
+    }
+
+    /* Header */
+    .page-header {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .header-right {
+        text-align: left;
+    }
+
+    .header-date-time {
+        justify-content: flex-start;
+    }
+
+    /* Overview */
+    #overview {
+        margin-left: 0;
+    }
+
+    .system-section h2 {
+        margin: 12px 0;
+    }
+
+    /* Cards */
     #dataContainer {
         width: 100%;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
         margin: 0;
     }
 
-    #overview h2{
-        margin-bottom: 10px;
-    }
-
-    .power-title {
-        margin-top: 10px;
-    }
-
-    .solar-title {
-        margin-top: 12px;
-    }
-}
-
-@media (max-width: 500px) {
-    #dataContainer {
+    .data-card {
         width: 100%;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-
+        height: auto;
+        min-height: 120px;
+        padding: 14px;
     }
 
-    #overview h2{
-        margin-bottom: 10px;
+    .data-card .card-title {
+        font-size: 18px;
     }
 
-    .power-title {
-        margin-top: 3px;
+    #dataContainer .sensor-value {
+        font-size: 24px;
     }
 
-    .solar-title {
-        margin-top: 3px;
+    /* Bottom navigation */
+    .bottom-navbar {
+        width: calc(100% - 20px);
+        justify-content: space-around;
+        gap: 0;
+        bottom: calc(10px + env(safe-area-inset-bottom));
+    }
+
+    .nav-item {
+        padding: 7px 10px;
+    }
+
+    .nav-label {
+        font-size: 12px;
     }
 }
