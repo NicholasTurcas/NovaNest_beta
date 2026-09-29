@@ -787,8 +787,8 @@ body.dark-mode .nav-links a {
         margin: 0;
     }
 
-    #overview {
-        margin-bottom: 5px;
+    #overview h2{
+        margin-bottom: 10px;
     }
 
     .power-title {
@@ -808,8 +808,8 @@ body.dark-mode .nav-links a {
 
     }
 
-    #overview {
-        margin-bottom: 5px;
+    #overview h2{
+        margin-bottom: 10px;
     }
 
     .power-title {
