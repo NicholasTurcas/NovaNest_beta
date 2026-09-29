@@ -487,14 +487,16 @@
 
                         <div class="automation-condition">
 
-                            <span>Heating start below</span>
+                            <span>Temperature maximum</span>
 
                             <div class="condition-value">
 
                                 <input
                                     type="number"
                                     id="heatingStart"
-                                    value="18"
+                                    value="29"
+                                    min="0"
+                                    max="50"
                                 >
 
                                 <span>°C</span>
@@ -506,60 +508,22 @@
 
                         <div class="automation-condition">
 
-                            <span>Heating stop above</span>
+                            <span>Temperature minimum</span>
 
                             <div class="condition-value">
 
                                 <input
                                     type="number"
                                     id="heatingStop"
-                                    value="21"
-                                >
-
-                                <span>°C</span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="automation-condition">
-
-                            <span>Cooling start above</span>
-
-                            <div class="condition-value">
-
-                                <input
-                                    type="number"
-                                    id="coolingStart"
-                                    value="25"
-                                >
-
-                                <span>°C</span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="automation-condition">
-
-                            <span>Cooling stop below</span>
-
-                            <div class="condition-value">
-
-                                <input
-                                    type="number"
-                                    id="coolingStop"
                                     value="22"
+                                    min="0"
+                                    max="50"
                                 >
-
                                 <span>°C</span>
 
                             </div>
 
                         </div>
-
 
                         <div class="automation-status">
 

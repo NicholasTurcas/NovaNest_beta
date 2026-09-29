@@ -50,36 +50,62 @@ updateIrrigationLimits();
 
 updateIrrigationStatus();
 
-//TEMPERATURE
+// TEMPERATURE
 const temperatureEnabled = document.getElementById("temperatureEnabled");
-const heatingStart = document.getElementById("heatingStart");
-const heatingStop = document.getElementById("heatingStop");
-const coolingStart = document.getElementById("coolingStart");
-const coolingStop = document.getElementById("coolingStop");
+
+// heatingStart = Temperature maximum
+const temperatureMax = document.getElementById("heatingStart");
+
+// heatingStop = Temperature minimum
+const temperatureMin = document.getElementById("heatingStop");
+
 const temperatureStatus = document.getElementById("temperatureStatus");
 
 
-function updateTemperatureLimits() {
-    const heatingStartValue = Number(heatingStart.value);
-    const heatingStopValue = Number(heatingStop.value);
+function updateTemperatureLimits(changedInput = null) {
+    let maxValue = Number(temperatureMax.value);
+    let minValue = Number(temperatureMin.value);
 
-    const coolingStartValue = Number(coolingStart.value);
-    const coolingStopValue = Number(coolingStop.value);
+    // Limite generale: 0–50°C
+    maxValue = Math.max(0, Math.min(50, maxValue));
+    minValue = Math.max(0, Math.min(50, minValue));
 
+    // Păstrăm diferența de minimum 1°C
+    if (changedInput === temperatureMax && maxValue <= minValue) {
+        if (maxValue === 0) {
+            maxValue = 1;
+            minValue = 0;
+        } else {
+            minValue = maxValue - 1;
+        }
+    } else if (changedInput === temperatureMin && minValue >= maxValue) {
+        if (minValue === 50) {
+            minValue = 49;
+            maxValue = 50;
+        } else {
+            maxValue = minValue + 1;
+        }
+    } else if (maxValue <= minValue) {
+        if (maxValue === 0) {
+            maxValue = 1;
+            minValue = 0;
+        } else {
+            minValue = maxValue - 1;
+        }
+    }
 
-    // Heating: START < STOP
-    heatingStart.max = heatingStopValue - 1;
-    heatingStop.min = heatingStartValue + 1;
+    temperatureMax.value = maxValue;
+    temperatureMin.value = minValue;
 
+    temperatureMax.min = minValue + 1;
+    temperatureMax.max = 50;
 
-    // Cooling: STOP < START
-    coolingStop.max = coolingStartValue - 1;
-    coolingStart.min = coolingStopValue + 1;
+    temperatureMin.min = 0;
+    temperatureMin.max = maxValue - 1;
 }
 
 
 function updateTemperatureStatus() {
-
     if (!temperatureEnabled.checked) {
         temperatureStatus.textContent = "Inactive";
         return;
@@ -89,34 +115,18 @@ function updateTemperatureStatus() {
 }
 
 
+// EVENT LISTENERS
 temperatureEnabled.addEventListener("change", function () {
     updateTemperatureStatus();
 });
 
-
-heatingStart.addEventListener("input", function () {
-    updateTemperatureLimits();
-    updateTemperatureStatus();
+temperatureMax.addEventListener("input", function () {
+    updateTemperatureLimits(temperatureMax);
 });
 
-
-heatingStop.addEventListener("input", function () {
-    updateTemperatureLimits();
-    updateTemperatureStatus();
+temperatureMin.addEventListener("input", function () {
+    updateTemperatureLimits(temperatureMin);
 });
-
-
-coolingStart.addEventListener("input", function () {
-    updateTemperatureLimits();
-    updateTemperatureStatus();
-});
-
-
-coolingStop.addEventListener("input", function () {
-    updateTemperatureLimits();
-    updateTemperatureStatus();
-});
-
 
 updateTemperatureLimits();
 updateTemperatureStatus();
