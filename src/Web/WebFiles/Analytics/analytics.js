@@ -61,6 +61,22 @@ function formatLabels(labels, period) {
 }
 
 
+function getAnalyticsTitle(module) {
+    const titleKeys = {
+        temperature: "analyticsTemperature",
+        humidity: "analyticsHumidity",
+        power: "analyticsPower",
+        solar: "analyticsSolar",
+        battery: "analyticsBattery",
+        water: "analyticsWater"
+    };
+
+    const key = titleKeys[module];
+
+    return translations[currentLanguage][key] || module;
+}
+
+
 // =========================
 // ANALYTICS CHART
 // =========================
@@ -142,14 +158,11 @@ async function updateAnalyticsChart(module, period) {
                 period
             );
 
-        chartTitle.textContent =
-            data.title;
+        const translatedTitle = getAnalyticsTitle(module);
 
-        analyticsChart.data.labels =
-            formattedLabels;
+        chartTitle.textContent = translatedTitle;
 
-        analyticsChart.data.datasets[0].label =
-            data.title;
+        analyticsChart.data.datasets[0].label = translatedTitle;
 
         analyticsChart.data.datasets[0].data =
             data.values;
@@ -257,3 +270,20 @@ updateAnalyticsChart(
     "temperature",
     "24h"
 );
+
+window.addEventListener("novaNestLanguageChanged", function() {
+    const activeModule = document.querySelector(
+        ".analytics-module.active"
+    );
+
+    if (!activeModule) return;
+
+    const translatedTitle = getAnalyticsTitle(
+        activeModule.dataset.module
+    );
+
+    chartTitle.textContent = translatedTitle;
+    analyticsChart.data.datasets[0].label = translatedTitle;
+
+    analyticsChart.update();
+});

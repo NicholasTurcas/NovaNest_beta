@@ -72,7 +72,7 @@
 
             </svg>
 
-            <span class="nav-label">Home</span>
+            <span class="nav-label" data-i18n="navHome">Home</span>
 
         </a>
 
@@ -141,7 +141,7 @@
 
             </svg>
 
-            <span class="nav-label">Analytics</span>
+            <span class="nav-label" data-i18n="navAnalytics">Analytics</span>
 
         </a>
 
@@ -174,7 +174,7 @@
 
             </svg>
 
-            <span class="nav-label">Automations</span>
+            <span class="nav-label" data-i18n="navAutomations">Automations</span>
 
         </a>
 
@@ -212,7 +212,7 @@
 
             </svg>
 
-            <span class="nav-label">Settings</span>
+            <span class="nav-label" data-i18n="navSettings">Settings</span>
 
         </a>
 
@@ -239,7 +239,7 @@
 
                     <h1>NovaNest</h1>
 
-                    <p>Smart Home Dashboard</p>
+                    <p data-i18n="headerDescription">Smart Home Dashboard</p>
 
                 </div>
 
@@ -282,7 +282,7 @@
 
         <section class="automations-section">
 
-            <h2>Automations</h2>
+            <h2 data-i18n="automationsTitle">Automations</h2>
 
 
             <div id="automationsContainer">
@@ -301,8 +301,8 @@
                             </div>
 
                             <div>
-                                <h3>Irrigation</h3>
-                                <p>Automatic irrigation control</p>
+                                <h3 data-i18n="irrigationTitle">Irrigation</h3>
+                                <p data-i18n="irrigationDescription">Automatic irrigation control</p>
                             </div>
 
                         </div>
@@ -320,14 +320,14 @@
 
                     <div class="automation-content">
 
-                        <p class="automation-description">
+                        <p class="automation-description" data-i18n="irrigationDetails">
                             Start irrigation when the water level drops below a certain value.
                         </p>
 
 
                         <div class="automation-condition">
 
-                            <span>Start irrigation</span>
+                            <span data-i18n="irrigationStart">Start irrigation</span>
 
                             <div class="condition-value">
 
@@ -348,7 +348,7 @@
 
                         <div class="automation-condition">
 
-                            <span>Stop irrigation</span>
+                            <span data-i18n="irrigationStop">Stop irrigation</span>
 
                             <div class="condition-value">
 
@@ -369,7 +369,7 @@
 
                         <div class="automation-condition">
 
-                            <span>Maximum runtime</span>
+                            <span data-i18n="maximumRuntime">Maximum runtime</span>
 
                             <div class="condition-value">
 
@@ -389,11 +389,9 @@
 
                         <div class="automation-status">
 
-                            <span>Status</span>
+                            <span data-i18n="status">Status</span>
 
-                            <strong id="irrigationStatus">
-                                Inactive
-                            </strong>
+                            <strong id="irrigationStatus" data-i18n="inactive">Inactive</strong>
 
                         </div>
 
@@ -409,8 +407,8 @@
 
                             <div class="automation-icon">🔋</div>
                             <div>
-                                <h3>Solar / Battery</h3>
-                                <p>Battery protection</p>
+                                <h3 data-i18n="solarBatteryTitle">Solar / Battery</h3>
+                                <p data-i18n="batteryProtection">Battery protection</p>
                             </div>
                         </div>
 
@@ -422,12 +420,12 @@
                     </div>
 
                     <div class="automation-content">
-                        <p class="automation-description">
+                        <p class="automation-description" data-i18n="batteryProtectionDetails">
                             Warn the user when the battery level drops below a critical value.
                         </p>
 
                         <div class="automation-condition">
-                            <span>Critical battery level</span>
+                            <span data-i18n="criticalBatteryLevel">Critical battery level</span>
 
                             <div class="condition-value">
                                 <input
@@ -442,8 +440,8 @@
                         </div>
 
                         <div class="automation-status">
-                            <span>Status</span>
-                            <strong id="batteryStatus">Inactive</strong>
+                            <span data-i18n="status">Status</span>
+                            <strong id="batteryStatus" data-i18n="inactive">Inactive</strong>
                         </div>
 
                     </div>
@@ -461,8 +459,8 @@
                             </div>
 
                             <div>
-                                <h3>Temperature</h3>
-                                <p>Automatic temperature control</p>
+                                <h3 data-i18n="temperatureAutomationTitle">Temperature</h3>
+                                <p data-i18n="temperatureDescription">Automatic temperature control</p>
                             </div>
 
                         </div>
@@ -480,14 +478,14 @@
 
                     <div class="automation-content">
 
-                        <p class="automation-description">
+                        <p class="automation-description" data-i18n="temperatureDetails">
                             Automatically control heating and cooling based on the room temperature.
                         </p>
 
 
                         <div class="automation-condition">
 
-                            <span>Temperature maximum</span>
+                            <span data-i18n="temperatureMaximum">Temperature maximum</span>
 
                             <div class="condition-value">
 
@@ -508,7 +506,7 @@
 
                         <div class="automation-condition">
 
-                            <span>Temperature minimum</span>
+                            <span data-i18n="temperatureMinimum">Temperature minimum</span>
 
                             <div class="condition-value">
 
@@ -527,11 +525,8 @@
 
                         <div class="automation-status">
 
-                            <span>Status</span>
-
-                            <strong id="temperatureStatus">
-                                Inactive
-                            </strong>
+                            <span data-i18n="status">Status</span>
+                            <strong id="temperatureStatus" data-i18n="inactive">Inactive</strong>
 
                         </div>
 
@@ -544,8 +539,8 @@
                         <div class="automation-title">
                             <div class="automation-icon">💡</div>
                             <div>
-                                <h3>Lighting</h3>
-                                <p>Automatic outdoor lighting</p>
+                                <h3 data-i18n="lightingTitle">Lighting</h3>
+                                <p data-i18n="lightingDescription">Automatic outdoor lighting</p>
                             </div>
                         </div>
 
@@ -556,12 +551,12 @@
                     </div>
 
                     <div class="automation-content">
-                        <p class="automation-description">
+                        <p class="automation-description" data-i18n="lightingDetails">
                             Automatically turn on the outdoor lights when it gets dark.
                         </p>
 
                         <div class="automation-condition">
-                            <span>Turn lights on below</span>
+                            <span data-i18n="turnLightsOnBelow">Turn lights on below</span>
 
                             <div class="condition-value">
                                 <input
@@ -576,8 +571,8 @@
                         </div>
 
                         <div class="automation-status">
-                            <span>Status</span>
-                            <strong id="lightingStatus">Inactive</strong>
+                            <span data-i18n="status">Status</span>
+                            <strong id="lightingStatus" data-i18n="inactive">Inactive</strong>
                         </div>
 
                     </div>
@@ -589,8 +584,8 @@
                         <div class="automation-title">
                             <div class="automation-icon">💧</div>
                             <div>
-                                <h3>Water Management</h3>
-                                <p>Automatic water refill</p>
+                                <h3 data-i18n="waterManagementTitle">Water Management</h3>
+                                <p data-i18n="waterManagementDescription">Automatic water refill</p>
                             </div>
                         </div>
                         <label class="automation-switch">
@@ -600,29 +595,43 @@
                     </div>
 
                     <div class="automation-content">
-                        <p class="automation-description">
+                        
+                        <p class="automation-description" data-i18n="waterManagementDetails">
                             Automatically refill the water tank when the water level gets low.
                         </p>
 
                         <div class="automation-condition">
-                            <span>Start refill below</span>
+                            
+                            <span data-i18n="startRefillBelow">Start refill below</span>
+
                             <div class="condition-value">
                                 <input type="number" id="waterStart" min="0" max="100" value="30">
+
                                 <span>%</span>
+                            
                             </div>
+
                         </div>
 
                         <div class="automation-condition">
-                            <span>Stop refill above</span>
+
+                            <span data-i18n="stopRefillAbove">Stop refill above</span>
+                            
                             <div class="condition-value">
+                            
                                 <input type="number" id="waterStop" min="0" max="100" value="80">
+                            
                                 <span>%</span>
+                            
                             </div>
+                        
                         </div>
 
                         <div class="automation-status">
-                            <span>Status</span>
-                            <strong id="waterManagementStatus">Inactive</strong>
+                        
+                            <span data-i18n="status">Status</span>
+                            <strong id="waterManagementStatus" data-i18n="inactive">Inactive</strong>
+                        
                         </div>
                     
                     </div>
@@ -635,8 +644,8 @@
                         <div class="automation-title">
                             <div class="automation-icon">🔒</div>
                             <div>
-                                <h3>Security</h3>
-                                <p>Fingerprint and motion detection</p>
+                                <h3 data-i18n="securityTitle">Security</h3>
+                                <p data-i18n="securityDescription">Fingerprint and motion detection</p>
                             </div>
                         </div>
 
@@ -644,16 +653,19 @@
                             <input type="checkbox" id="securityEnabled">
                             <span class="automation-slider"></span>
                         </label>
+
                     </div>
 
                     <div class="automation-content">
-                        <p class="automation-description">
+                        <p class="automation-description" data-i18n="securityDetails">
                             Automatically arm the security system and temporarily disarm it
                             after a valid fingerprint is detected.
                         </p>
 
                         <div class="automation-condition">
-                            <span>Disarm duration</span>
+
+                            <span data-i18n="disarmDuration">Disarm duration</span>
+                            
                             <div class="condition-value">
                                 <input
                                     type="number"
@@ -667,19 +679,20 @@
                         </div>
 
                         <div class="automation-status">
-                            <span>PIR Sensor</span>
-                            <strong id="securityPirStatus">No motion</strong>
+                            <span data-i18n="pirSensor">PIR Sensor</span>
+                            <strong id="securityPirStatus" data-i18n="noMotion">No motion</strong>
                         </div>
 
                         <div class="automation-status">
-                            <span>Fingerprint Sensor</span>
-                            <strong id="securityFingerprintStatus">Waiting</strong>
+                            <span data-i18n="fingerprintSensor">Fingerprint Sensor</span>
+                            <strong id="securityFingerprintStatus" data-i18n="waiting">Waiting</strong>
                         </div>
-
+`
                         <div class="automation-status">
-                            <span>Security Status</span>
+                            <span data-i18n="securityStatus">Security Status</span>
                             <strong id="securityStatus">Inactive</strong>
                         </div>
+                    
                     </div>
                     
                 </div>
@@ -692,12 +705,11 @@
 
     </main>
 
-
+    <script src="../translations.js"></script>
 
     <script src="../common.js"></script>
 
     <script src="./automations.js"></script>
-
 
 </body>
 

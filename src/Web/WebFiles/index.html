@@ -28,7 +28,7 @@
 
         <!-- HOME -->
 
-        <a href="#" class="nav-item active">
+        <a href="./index.html" class="nav-item active">
 
             <svg
                 class="nav-icon"
@@ -60,7 +60,7 @@
 
             </svg>
 
-            <span class="nav-label">Home</span>
+            <span class="nav-label" data-i18n="navHome">Home</span>
 
         </a>
 
@@ -128,7 +128,7 @@
 
             </svg>
 
-            <span class="nav-label">Analytics</span>
+            <span class="nav-label" data-i18n="navAnalytics">Analytics</span>
 
         </a>
 
@@ -160,14 +160,15 @@
 
             </svg>
 
-            <span class="nav-label">Automations</span>
+            <span class="nav-label" data-i18n="navAutomations">Automations</span>
+
 
         </a>
 
 
         <!-- SETTINGS -->
 
-        <a href="settings.html" class="nav-item">
+        <a href="./Settings/settings.html" class="nav-item">
 
             <svg
                 class="nav-icon"
@@ -197,8 +198,7 @@
 
             </svg>
 
-            <span class="nav-label">Settings</span>
-
+            <span class="nav-label" data-i18n="navSettings">Settings</span>
         </a>
 
     </nav>
@@ -216,15 +216,11 @@
 
             <div class="header-left">
 
-                <div class="header-logo">
-                    <!-- Logo-ul NovaNest îl punem aici -->
-                </div>
-
                 <div class="header-title">
 
                     <h1>NovaNest</h1>
 
-                    <p>Smart Home Dashboard</p>
+                    <p data-i18n="headerDescription">Smart Home Dashboard</p>
 
                 </div>
 
@@ -265,7 +261,7 @@
 
         <section class="system-section">
 
-            <h2 id="overview">Overview</h2>
+            <h2 id="overview" data-i18n="overviewTitle">Overview</h2>
 
 
             <div id="dataContainer">
@@ -285,7 +281,7 @@
 
                         <div class="temperature-content">
 
-                            <h3>
+                            <h3 data-i18n="temperatureTitle">
                                 Temperature
                             </h3>
 
@@ -321,7 +317,7 @@
 
                         <div class="humidity-content">
 
-                            <h3>
+                            <h3 data-i18n="humidityTitle">
                                 Humidity
                             </h3>
 
@@ -357,7 +353,7 @@
 
                         <div class="power-content">
 
-                            <h3 class="power-title">
+                            <h3 class="power-title" data-i18n="powerTitle">
                                 Power Consumption
                             </h3>
 
@@ -392,7 +388,7 @@
 
                         <div class="solar-content">
 
-                            <h3 class="solar-title">
+                            <h3 class="solar-title" data-i18n="solarTitle">
                                 Solar Production
                             </h3>
 
@@ -428,7 +424,7 @@
 
                         <div class="battery-content">
 
-                            <h3>
+                            <h3 data-i18n="batteryTitle">
                                 Battery
                             </h3>
 
@@ -464,7 +460,7 @@
 
                         <div class="water-content">
 
-                            <h3>
+                            <h3 data-i18n="waterTitle">
                                 Water Level
                             </h3>
 
@@ -472,7 +468,7 @@
 
                                 <span
                                     id="waterLevel"
-                                    class="sensor-value"
+                                    class="sensor-value"  
                                 >
                                     Loading...
                                 </span>
@@ -500,7 +496,7 @@
 
                         <div class="lights-content">
 
-                            <h3>
+                            <h3 data-i18n="lightsTitle">
                                 Lights
                             </h3>
 
@@ -536,7 +532,7 @@
 
                         <div class="irrigation-content">
 
-                            <h3>
+                            <h3 data-i18n="irrigationTitle">
                                 Irrigation
                             </h3>
 
@@ -572,7 +568,7 @@
 
                         <div class="security-content">
 
-                            <h3>
+                            <h3 data-i18n="securityTitle">
                                 Security
                             </h3>
 
@@ -597,11 +593,12 @@
 
     </main>
 
-    
+    <script src="./translations.js"></script>
+
     <script src="common.js"></script>
 
     <script src="script.js"></script>
-    
+
 
 </body>
 

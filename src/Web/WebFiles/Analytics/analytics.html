@@ -63,14 +63,14 @@
 
                 </svg>
 
-                <span class="nav-label">Home</span>
+                <span class="nav-label" data-i18n="navHome">Home</span>
 
             </a>
 
 
             <!-- ANALYTICS -->
 
-            <a href="#" class="nav-item active">
+            <a href="../Analytics/analytics.html" class="nav-item active">
 
                 <svg
                     class="nav-icon"
@@ -131,7 +131,7 @@
 
                 </svg>
 
-                <span class="nav-label">Analytics</span>
+                <span class="nav-label" data-i18n="navAnalytics">Analytics</span>
 
             </a>
 
@@ -163,7 +163,7 @@
 
                 </svg>
 
-                <span class="nav-label">Automations</span>
+                <span class="nav-label" data-i18n="navAutomations">Automations</span>
 
             </a>
 
@@ -200,7 +200,7 @@
 
                 </svg>
 
-                <span class="nav-label">Settings</span>
+                <span class="nav-label" data-i18n="navSettings">Settings</span>
 
             </a>
 
@@ -219,10 +219,6 @@
             <header class="page-header">
 
                 <div class="header-left">
-
-                    <div class="header-logo">
-                        <!-- Logo-ul NovaNest îl punem aici -->
-                    </div>
 
                     <div class="header-title">
 
@@ -262,7 +258,7 @@
 
             <div class="analytics-separator">
                 
-                <h2>Analytics</h2>
+                <h2 data-i18n="analyticsTitle">Analytics</h2>
             
             </div>
 
@@ -281,27 +277,39 @@
 
                     <aside class="analytics-sidebar">
 
-                        <button class="analytics-module active" data-module="temperature">
+                        <button class="analytics-module active"
+                                data-module="temperature"
+                                data-i18n="analyticsTemperature">
                             Temperature
                         </button>
 
-                        <button class="analytics-module" data-module="humidity">
+                        <button class="analytics-module"
+                                data-module="humidity"
+                                data-i18n="analyticsHumidity">
                             Humidity
                         </button>
 
-                        <button class="analytics-module" data-module="power">
+                        <button class="analytics-module"
+                                data-module="power"
+                                data-i18n="analyticsPower">
                             Power Consumption
                         </button>
 
-                        <button class="analytics-module" data-module="solar">
+                        <button class="analytics-module"
+                                data-module="solar"
+                                data-i18n="analyticsSolar">
                             Solar Production
                         </button>
 
-                        <button class="analytics-module" data-module="battery">
+                        <button class="analytics-module"
+                                data-module="battery"
+                                data-i18n="analyticsBattery">
                             Battery
                         </button>
 
-                        <button class="analytics-module" data-module="water">
+                        <button class="analytics-module"
+                                data-module="water"
+                                data-i18n="analyticsWater">
                             Water Level
                         </button>
 
@@ -320,18 +328,22 @@
                                 24h
                             </button>
 
-                            <button class="analytics-period" data-period="7d">
-                                7 zile
+                            <button class="analytics-period" 
+                                    data-period="7d" 
+                                    data-i18n="period7Days">
+                                7 days
                             </button>
 
-                            <button class="analytics-period" data-period="30d">
-                                30 zile
+                            <button class="analytics-period" 
+                                    data-period="30d" 
+                                    data-i18n="period30Days">
+                                30 days
                             </button>
 
                         </div>
 
                         <div class="analytics-chart">
-                            <h3>Temperature</h3>
+                            <h3 data-i18n="analyticsTemperature">Temperature</h3>
 
                             <div class="chart-container">
                                 <canvas id="temperatureChart"></canvas>
@@ -345,11 +357,14 @@
 
         </main>
 
+        <script src="../translations.js"></script>
+        
         <script src="../common.js"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
         <script src="./analytics.js"></script>
+
 
     </body>
 
