@@ -367,6 +367,10 @@ h1 {
         width: 100%;
     }
 
+    main {
+        padding-bottom: 120px;
+    }
+
 
     /* PERIOD BUTTONS */
 
