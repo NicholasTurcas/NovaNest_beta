@@ -93,6 +93,11 @@ const translations = {
         connectionDescription: "Current system connection",
         displayTitle: "Display",
         languageDescription: "Choose your preferred language",
+        themeTitle: "Theme",
+        themeDescription: "Choose your preferred theme",
+        themeSystem: "System",
+        themeLight: "Light",
+        themeDark: "Dark",
         notificationsTitle: "Notifications",
         enableNotifications: "Enable notifications",
         enableNotificationsDescription: "Receive notifications from NovaNest",
@@ -194,10 +199,13 @@ const translations = {
         connectionStatus: "Starea conexiunii",
         connectionDescription: "Conexiunea curentă a sistemului",
         headerDescription: "Panou de control Smart Home",
-
         displayTitle: "Afișare",
         languageDescription: "Alege limba preferată",
-
+        themeTitle: "Temă",
+        themeDescription: "Alege tema preferată",
+        themeSystem: "Sistem",
+        themeLight: "Luminoasă",
+        themeDark: "Întunecată",
         notificationsTitle: "Notificări",
         enableNotifications: "Activează notificările",
         enableNotificationsDescription: "Primește notificări de la NovaNest",
@@ -207,7 +215,6 @@ const translations = {
         securityNotificationsDescription: "Notificări despre evenimente de securitate",
         waterNotifications: "Nivelul apei",
         waterNotificationsDescription: "Notificări despre modificările nivelului apei",
-
         aboutTitle: "Despre",
         projectName: "Numele proiectului",
         version: "Versiune"

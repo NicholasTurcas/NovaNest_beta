@@ -685,46 +685,6 @@ h3{
 
 
 /* =========================
-   DARK MODE
-   ========================= 
-*/
-
-body.dark-mode {
-    background-color: #010811;
-    color: #F9FAFB;
-}
-
-body.dark-mode .data-card {
-    background-color: #061320;
-    color: #F9FAFB;
-
-    border: 1px solid #0D1C2D;
-}
-
-body.dark-mode .bottom-navbar {
-    background-color: #061320;
-    border-color: #0D1C2D;
-}
-
-body.dark-mode .nav-item {
-    color: #8B9AA5;
-}
-
-body.dark-mode .nav-item.active {
-    color: #8DBCC7;
-}
-
-body.dark-mode .sensor-value,
-body.dark-mode .timestamp,
-body.dark-mode .temperature-unit {
-    color: #F9FAFB;
-}
-
-body.dark-mode .nav-links a {
-    color: #F9FAFB;
-}
-
-/* =========================
    OFFLINE AND ERROR STATES
    ========================= 
 */
@@ -849,4 +809,42 @@ body.dark-mode .nav-links a {
     .nav-label {
         font-size: 12px;
     }
+}
+
+/* =========================
+   DARK MODE
+   ========================= */
+
+:root[data-theme="dark"] body {
+    background-color: #010811;
+    color: #F9FAFB;
+}
+
+:root[data-theme="dark"] .data-card {
+    background-color: #061320;
+    color: #F9FAFB;
+    border: 1px solid #0D1C2D;
+}
+
+:root[data-theme="dark"] .bottom-navbar {
+    background-color: #061320;
+    border-color: #0D1C2D;
+}
+
+:root[data-theme="dark"] .nav-item {
+    color: #8B9AA5;
+}
+
+:root[data-theme="dark"] .nav-item.active {
+    color: #8DBCC7;
+}
+
+:root[data-theme="dark"] .sensor-value,
+:root[data-theme="dark"] .timestamp,
+:root[data-theme="dark"] .temperature-unit {
+    color: #F9FAFB;
+}
+
+:root[data-theme="dark"] .nav-links a {
+    color: #F9FAFB;
 }

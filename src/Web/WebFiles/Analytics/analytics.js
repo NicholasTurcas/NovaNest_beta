@@ -4,7 +4,7 @@
 
 async function getAnalyticsData(module, period) {
     const response = await fetch(
-        `http://192.168.0.106/api/analytics?module=${module}&period=${period}`
+        `http://10.10.11.179/api/analytics?module=${module}&period=${period}`
     );
 
     if (!response.ok) {
@@ -13,7 +13,6 @@ async function getAnalyticsData(module, period) {
 
     return await response.json();
 }
-
 
 // =========================
 // FORMAT TIMESTAMP
@@ -93,6 +92,21 @@ const analyticsModules =
 const analyticsPeriods =
     document.querySelectorAll(".analytics-period");
 
+function getAnalyticsChartTheme() {
+    const isDark =
+        document.documentElement.dataset.theme === "dark";
+
+    return {
+        text: isDark ? "#A9BBD0" : "#53636D",
+        grid: isDark
+            ? "rgba(141, 188, 199, 0.10)"
+            : "rgba(83, 99, 109, 0.12)",
+        tooltipBackground: isDark ? "#061320" : "#F9FAFB",
+        tooltipText: isDark ? "#F9FAFB" : "#17212B",
+        tooltipBorder: isDark ? "#0D1C2D" : "#DCEAF0"
+    };
+}
+
 
 let analyticsChart = new Chart(chartCanvas, {
     type: "line",
@@ -110,31 +124,57 @@ let analyticsChart = new Chart(chartCanvas, {
         }]
     },
 
+    
     options: {
-        responsive: true,
-        maintainAspectRatio: false,
+    responsive: true,
+    maintainAspectRatio: false,
 
-        plugins: {
-            legend: {
+    plugins: {
+        legend: {
+            display: false
+        },
+
+        tooltip: {
+            backgroundColor: getAnalyticsChartTheme().tooltipBackground,
+            titleColor: getAnalyticsChartTheme().tooltipText,
+            bodyColor: getAnalyticsChartTheme().tooltipText,
+            borderColor: getAnalyticsChartTheme().tooltipBorder,
+            borderWidth: 1
+        }
+    },
+
+    scales: {
+        x: {
+            ticks: {
+                color: getAnalyticsChartTheme().text
+            },
+            grid: {
                 display: false
+            },
+            border: {
+                color: getAnalyticsChartTheme().grid
             }
         },
 
-        scales: {
-            x: {
-                grid: {
-                    display: false
-                }
+        y: {
+            title: {
+                display: true,
+                text: "°C",
+                color: getAnalyticsChartTheme().text
             },
-
-            y: {
-                title: {
-                    display: true,
-                    text: "°C"
-                }
+            ticks: {
+                color: getAnalyticsChartTheme().text
+            },
+            grid: {
+                color: getAnalyticsChartTheme().grid
+            },
+            border: {
+                color: getAnalyticsChartTheme().grid
             }
         }
     }
+}
+
 });
 
 
@@ -157,6 +197,9 @@ async function updateAnalyticsChart(module, period) {
                 data.labels,
                 period
             );
+        
+            analyticsChart.data.labels = formattedLabels;
+        
 
         const translatedTitle = getAnalyticsTitle(module);
 
@@ -266,24 +309,32 @@ analyticsPeriods.forEach(function(period) {
 // INITIAL DATA
 // =========================
 
-updateAnalyticsChart(
+const allowedModules = [
     "temperature",
-    "24h"
+    "humidity",
+    "power",
+    "solar",
+    "battery",
+    "water"
+];
+
+const urlParams = new URLSearchParams(window.location.search);
+const requestedModule = urlParams.get("module");
+
+const initialModule = allowedModules.includes(requestedModule)
+    ? requestedModule
+    : "temperature";
+
+const initialModuleButton = document.querySelector(
+    `.analytics-module[data-module="${initialModule}"]`
 );
 
-window.addEventListener("novaNestLanguageChanged", function() {
-    const activeModule = document.querySelector(
-        ".analytics-module.active"
-    );
+if (initialModuleButton) {
+    analyticsModules.forEach(function(item) {
+        item.classList.remove("active");
+    });
 
-    if (!activeModule) return;
+    initialModuleButton.classList.add("active");
+}
 
-    const translatedTitle = getAnalyticsTitle(
-        activeModule.dataset.module
-    );
-
-    chartTitle.textContent = translatedTitle;
-    analyticsChart.data.datasets[0].label = translatedTitle;
-
-    analyticsChart.update();
-});
+updateAnalyticsChart(initialModule, "24h");

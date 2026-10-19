@@ -390,3 +390,88 @@ h1 {
         height: 320px;
     }
 }
+
+
+/* =========================
+   DARK MODE - ANALYTICS
+========================= */
+
+:root[data-theme="dark"] body {
+    background-color: #010811;
+    color: #F9FAFB;
+}
+
+/* Bottom navigation */
+
+:root[data-theme="dark"] .bottom-navbar {
+    background-color: #061320;
+    border-color: #0D1C2D;
+}
+
+:root[data-theme="dark"] .nav-item {
+    color: #8B9AA5;
+}
+
+:root[data-theme="dark"] .nav-item.active {
+    color: #8DBCC7;
+}
+
+/* Analytics modules */
+
+
+:root[data-theme="dark"] .analytics-module {
+    background-color: #061320;
+    color: #F9FAFB;
+    border: 1px solid #0D1C2D;
+    box-shadow: 0 0 12px rgba(18, 125, 144, 0.18);
+}
+
+:root[data-theme="dark"] .analytics-module.active {
+    color: #8DBCC7;
+    border-color: #8DBCC7;
+    box-shadow:
+        0 0 0 1px rgba(141, 188, 199, 0.12),
+        0 0 14px rgba(18, 125, 144, 0.30);
+}
+
+
+/* Period buttons */
+
+:root[data-theme="dark"] .analytics-period {
+    background-color: #061320;
+    color: #A9BBD0;
+    border-color: #0D1C2D;
+}
+
+:root[data-theme="dark"] .analytics-period.active {
+    color: #8DBCC7;
+    border-color: #8DBCC7;
+    box-shadow: 0 0 10px rgba(141, 188, 199, 0.15);
+}
+
+/* Chart area */
+
+/* Chart area */
+
+:root[data-theme="dark"] .chart-container {
+    background-color: #061320;
+    border: 1px solid #0D1C2D;
+    border-radius: 12px;
+
+    box-shadow:
+        0 0 0 2px rgba(66, 214, 195, 0.06),
+        0 0 10px rgba(66, 214, 195, 0.13),
+        0 0 24px rgba(66, 214, 195, 0.06);
+
+    transition:
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+/* Chart text and headings */
+
+:root[data-theme="dark"] .analytics-chart,
+:root[data-theme="dark"] .analytics-chart h3,
+:root[data-theme="dark"] .analytics-separator,
+:root[data-theme="dark"] .analytics-separator h2 {
+    color: #F9FAFB;
+}

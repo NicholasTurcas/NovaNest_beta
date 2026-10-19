@@ -31,151 +31,75 @@ const sensorData = {
 
 /* =========================
    ELEMENTS
-   ========================= 
-*/
+========================= */
+
+const temperatureElement = document.getElementById("temperature");
+const temperatureCard = document.getElementById("temperatureCard");
+
+const humidityElement = document.getElementById("humidity");
+const humidityCard = document.getElementById("humidityCard");
+
+const powerElement = document.getElementById("powerConsumption");
+const powerCard = document.getElementById("powerCard");
+
+const solarElement = document.getElementById("solarProduction");
+const solarCard = document.getElementById("solarCard");
+
+const batteryElement = document.getElementById("batteryLevel");
+const batteryCard = document.getElementById("batteryCard");
+
+const waterLevelElement = document.getElementById("waterLevel");
+const waterCard = document.getElementById("waterCard");
+
+const lightsStatusElement = document.getElementById("lightsStatus");
+const lightsCard = document.getElementById("lightsCard");
+
+const irrigationStatusElement = document.getElementById("irrigationStatus");
+const irrigationCard = document.getElementById("irrigationCard");
+
+const securityStatusElement = document.getElementById("securityStatus");
+const securityCard = document.getElementById("securityCard");
 
 /* =========================
-   TEMPERATURE
+   REDERECTING TO ANALYTICS
    ========================= 
 */
-
-const temperatureElement =
-    document.getElementById("temperature");
-
-const temperatureCard = 
-    document.getElementById("temperatureCard");
 
 temperatureCard.addEventListener("click", function() {
-    alert("Temperature card clicked");
+    window.location.href = "Analytics/analytics.html?module=temperature";
 });
-
-
-/* =========================
-   HUMIDITY
-   ========================= 
-*/
-
-const humidityElement =
-    document.getElementById("humidity");
-
-const humidityCard = 
-    document.getElementById("humidityCard");
 
 humidityCard.addEventListener("click", function() {
-    alert("Humidity card clicked");
+    window.location.href = "Analytics/analytics.html?module=humidity";
 });
-
-
-/* =========================
-   POWER CONSUMPTION
-   ========================= 
-*/
-
-const powerElement =
-    document.getElementById("powerConsumption");
-
-const powerCard = 
-    document.getElementById("powerCard");
 
 powerCard.addEventListener("click", function() {
-    alert("Power Consumption card clicked");
+    window.location.href = "Analytics/analytics.html?module=power";
 });
-
-
-/* =========================
-   SOLAR PRODUCTION
-   ========================= 
-*/
-
-const solarElement =
-    document.getElementById("solarProduction");
-
-const solarCard =
-    document.getElementById("solarCard");
 
 solarCard.addEventListener("click", function() {
-    alert("Solar Production card clicked");
+    window.location.href = "Analytics/analytics.html?module=solar";
 });
-
-
-/* =========================
-   BATTERY
-   ========================= 
-*/
-
-const batteryElement =
-    document.getElementById("batteryLevel");
-
-const batteryCard =
-    document.getElementById("batteryCard");
 
 batteryCard.addEventListener("click", function() {
-    alert("Battery card clicked");
+    window.location.href = "Analytics/analytics.html?module=battery";
 });
-
-
-/* =========================
-   WATER LEVEL
-   ========================= 
-*/
-
-const waterLevelElement =
-    document.getElementById("waterLevel");
-
-const waterCard =
-    document.getElementById("waterCard");   
 
 waterCard.addEventListener("click", function() {
-    alert("Water Level card clicked");
+    window.location.href = "Analytics/analytics.html?module=water";
 });
-
-
-/* =========================
-   LIGHTS
-   ========================= 
-*/
-
-const lightsStatusElement =
-    document.getElementById("lightsStatus");
-
-const lightsCard =
-    document.getElementById("lightsCard");
 
 lightsCard.addEventListener("click", function() {
-    alert("Lights card clicked");
+    window.location.href = "Automations/automations.html";
 });
-
-
-/* =========================
-   IRIGATION
-   ========================= 
-*/
-
-const irrigationStatusElement =
-    document.getElementById("irrigationStatus");
-
-const irrigationCard =
-    document.getElementById("irrigationCard");
 
 irrigationCard.addEventListener("click", function() {
-    alert("Irrigation card clicked");
+    window.location.href = "Automations/automations.html";
 });
-
-/* =========================
-   SECURITY
-   ========================= 
-*/
-
-const securityStatusElement =
-    document.getElementById("securityStatus");
-
-const securityCard =
-    document.getElementById("securityCard");
 
 securityCard.addEventListener("click", function() {
-    alert("Security card clicked");
+    window.location.href = "Automations/automations.html";
 });
-
 
 /* =========================
    TEMPERATURE

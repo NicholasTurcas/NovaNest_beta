@@ -16,6 +16,24 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+
+    // =========================
+    // SETTINGS - THEME
+    // =========================
+
+    const themeSelect = document.getElementById("themeSelect");
+
+    if (themeSelect) {
+        // Load saved theme preference
+        themeSelect.value = currentThemePreference;
+
+        // Change theme
+        themeSelect.addEventListener("change", () => {
+            setNovaNestTheme(themeSelect.value);
+        });
+    }
+
+
     // =========================
     // SETTINGS - NOTIFICATIONS
     // =========================

@@ -310,6 +310,32 @@ h1 {
     font-size: 13px;
 }
 
+/* =========================
+   THEME SELECT
+========================= */
+
+#themeSelect {
+    min-width: 120px;
+
+    padding: 9px 12px;
+
+    border: 1px solid #DCEAF0;
+    border-radius: 10px;
+
+    background: white;
+
+    font-family: inherit;
+    font-size: 14px;
+    color: #111827;
+
+    cursor: pointer;
+}
+
+#themeSelect:focus {
+    outline: 2px solid #8DBCC7;
+    outline-offset: 2px;
+}
+
 
 /* =========================
    RESPONSIVE
@@ -351,4 +377,81 @@ h1 {
     .nav-label {
         font-size: 12px;
     }
+}
+
+/* =========================
+   DARK MODE - SETTINGS
+========================= */
+
+:root[data-theme="dark"] body {
+    background: #010811;
+    color: #F9FAFB;
+}
+
+/* Settings cards */
+
+:root[data-theme="dark"] .settings-card {
+    background: #061320;
+    color: #F9FAFB;
+    border: 1px solid #0D1C2D;
+
+    box-shadow:
+        0 0 0 1px rgba(66, 214, 195, 0.12),
+        0 0 16px rgba(66, 214, 195, 0.12);
+}
+
+:root[data-theme="dark"] .settings-card:hover {
+    box-shadow:
+        0 0 0 1px rgba(66, 214, 195, 0.20),
+        0 0 20px rgba(66, 214, 195, 0.20);
+}
+
+/* Option separators */
+
+:root[data-theme="dark"] .settings-option {
+    border-bottom-color: rgba(141, 188, 199, 0.18);
+}
+
+/* Language and theme selectors */
+
+:root[data-theme="dark"] #languageSelect,
+:root[data-theme="dark"] #themeSelect {
+    background-color: #010811;
+    color: #F9FAFB;
+    border-color: #334155;
+    color-scheme: dark;
+}
+
+:root[data-theme="dark"] #languageSelect:focus,
+:root[data-theme="dark"] #themeSelect:focus {
+    outline-color: #42D6C3;
+}
+
+/* Switches */
+
+:root[data-theme="dark"] .settings-slider {
+    background: #334155;
+}
+
+:root[data-theme="dark"] .settings-switch input:checked + .settings-slider {
+    background: #42D6C3;
+}
+
+:root[data-theme="dark"] .settings-switch input:focus-visible + .settings-slider {
+    outline-color: #42D6C3;
+}
+
+/* Bottom navigation */
+
+:root[data-theme="dark"] .bottom-navbar {
+    background-color: #061320;
+    border-color: #0D1C2D;
+}
+
+:root[data-theme="dark"] .nav-item {
+    color: #8B9AA5;
+}
+
+:root[data-theme="dark"] .nav-item.active {
+    color: #8DBCC7;
 }

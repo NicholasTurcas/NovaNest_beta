@@ -10,8 +10,8 @@ namespace Config {
     constexpr unsigned long SERIAL_BAUD = 9600;
 
     // Wi-Fi
-    constexpr char WIFI_SSID[] = "Marcel";
-    constexpr char WIFI_PASSWORD[] = "marcel1983";
+    constexpr char WIFI_SSID[] = "CTIM-Profesori";
+    constexpr char WIFI_PASSWORD[] = "ProfCTIM1.1";
 
     // Web Server
     constexpr unsigned int WEB_SERVER_PORT = 80;

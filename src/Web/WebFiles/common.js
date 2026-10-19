@@ -111,3 +111,45 @@ setInterval(function() {
     updateDateTime();
     updateSystemStatus();
 }, 10000);
+
+
+ // =========================
+ // THEME SYSTEM
+ // =========================
+
+const savedTheme = localStorage.getItem("novaNestTheme") || "system";
+
+let currentThemePreference = ["light", "dark", "system"].includes(savedTheme)
+    ? savedTheme
+    : "system";
+
+const systemThemeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+function applyTheme() {
+    const resolvedTheme =
+        currentThemePreference === "system"
+            ? (systemThemeQuery.matches ? "dark" : "light")
+            : currentThemePreference;
+
+    document.documentElement.dataset.theme = resolvedTheme;
+}
+
+function setNovaNestTheme(theme) {
+    if (!["light", "dark", "system"].includes(theme)) return;
+
+    currentThemePreference = theme;
+
+    localStorage.setItem("novaNestTheme", theme);
+
+    applyTheme();
+    window.dispatchEvent(new Event("novaNestThemeChanged"));
+}
+
+systemThemeQuery.addEventListener("change", () => {
+    if (currentThemePreference === "system") {
+        applyTheme();
+    }
+});
+
+// Apply the saved theme immediately
+applyTheme();

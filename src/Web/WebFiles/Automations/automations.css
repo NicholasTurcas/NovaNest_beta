@@ -324,72 +324,6 @@ h1 {
     font-weight: 600;
 }
 
-
-/* =========================
-   SWITCH
-   ========================= */
-
-.automation-switch {
-    position: relative;
-
-    width: 48px;
-    height: 26px;
-
-    display: inline-block;
-}
-
-
-.automation-switch input {
-    opacity: 0;
-
-    width: 0;
-    height: 0;
-}
-
-
-.automation-slider {
-    position: absolute;
-
-    inset: 0;
-
-    cursor: pointer;
-
-    background: #CBD5E1;
-
-    border-radius: 30px;
-
-    transition: 0.2s;
-}
-
-
-.automation-slider::before {
-    content: "";
-
-    position: absolute;
-
-    width: 20px;
-    height: 20px;
-
-    left: 3px;
-    top: 3px;
-
-    background: white;
-
-    border-radius: 50%;
-
-    transition: 0.2s;
-}
-
-
-.automation-switch input:checked + .automation-slider {
-    background: #6B9FB8;
-}
-
-
-.automation-switch input:checked + .automation-slider::before {
-    transform: translateX(22px);
-}
-
 /* =========================
    SWITCH
    ========================= */
@@ -479,4 +413,102 @@ h1 {
         margin: 0;
         box-sizing: border-box;
     }
+}
+
+/* =========================
+   DARK MODE - AUTOMATIONS
+========================= */
+
+:root[data-theme="dark"] body {
+    background: #010811;
+    color: #F9FAFB;
+}
+
+/* Bottom navigation */
+
+:root[data-theme="dark"] .bottom-navbar {
+    background-color: #061320;
+    border-color: #0D1C2D;
+}
+
+:root[data-theme="dark"] .nav-item {
+    color: #8B9AA5;
+}
+
+:root[data-theme="dark"] .nav-item.active {
+    color: #8DBCC7;
+}
+
+/* Automation cards */
+
+:root[data-theme="dark"] .automation-card {
+    background: #061320;
+    color: #F9FAFB;
+    border: 1px solid #0D1C2D;
+
+    box-shadow:
+        0 0 0 1px rgba(66, 214, 195, 0.06),
+        0 0 16px rgba(66, 214, 195, 0.12);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+/* Card hover */
+
+:root[data-theme="dark"] .automation-card:hover {
+    border-color: rgba(66, 214, 195, 0.35);
+
+    box-shadow:
+        0 0 0 1px rgba(66, 214, 195, 0.10),
+        0 0 20px rgba(66, 214, 195, 0.20);
+}
+
+/* Icons */
+
+:root[data-theme="dark"] .automation-icon {
+    background: #0D2431;
+}
+
+/* Conditions */
+
+:root[data-theme="dark"] .automation-condition {
+    background: rgba(13, 36, 49, 0.85);
+}
+
+/* Input fields */
+
+:root[data-theme="dark"] .condition-value input {
+    background: #0B1A28;
+    color: #F9FAFB;
+    border: 1px solid #203547;
+}
+
+/* Switch */
+
+:root[data-theme="dark"] .automation-slider {
+    background: #334155;
+}
+
+:root[data-theme="dark"] .automation-switch input:checked + .automation-slider {
+    background: #42D6C3;
+}
+
+/* Text */
+
+:root[data-theme="dark"] .automation-title p,
+:root[data-theme="dark"] .automation-description,
+:root[data-theme="dark"] .automation-status {
+    color: #A9BBD0;
+}
+
+/* Dark mode - number inputs */
+
+:root[data-theme="dark"] .condition-value input {
+    background-color: #0D2431;
+    color: #F9FAFB;
+    border: 1px solid #334155;
+    color-scheme: dark;
 }
